@@ -8,6 +8,11 @@
                 <div class="panel-heading"><strong>Socios</strong></div>
                 <div class="panel-body">
                     skajdlaskjdklasjd
+                    asdsadas
+                    asdasd
+                    sad
+                    asd
+                    sad
                 </div>
             </div>
       </div>
