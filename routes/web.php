@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::group(['middleware' => 'admin'], function () {
 
     Route::resource('/users','UserController');
+    Route::post('/users_update_profile','UserController@updateProfile');
     Route::resource('/payments','PaymentController');
     Route::resource('/suggestions','SuggestionController');
 

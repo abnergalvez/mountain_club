@@ -25,9 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('profession')->nullable();
             $table->string('phone')->nullable();
             $table->string('blood_type')->nullable();
-            $table->text('allergies')->nullable();
-            $table->text('diseases')->nullable();
-            $table->text('lesions')->nullable();
+            $table->text('health_problems')->nullable();
             $table->text('experience')->nullable();
             $table->text('training')->nullable();
             $table->text('own_equipment')->nullable();
