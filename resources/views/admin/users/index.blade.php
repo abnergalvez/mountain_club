@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Socios</strong></div>
                 <div class="panel-body">
-
+                    skajdlaskjdklasjd
                 </div>
             </div>
       </div>
