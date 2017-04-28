@@ -9,10 +9,7 @@
                 <div class="panel-body">
                     skajdlaskjdklasjd
                     asdsadas
-                    asdasd
-                    sad
-                    asd
-                    sad
+
                 </div>
             </div>
       </div>
