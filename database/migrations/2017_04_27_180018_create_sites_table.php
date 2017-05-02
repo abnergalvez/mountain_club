@@ -15,16 +15,14 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('who_are');
-            $table->text('schedule_meetings');
-            $table->text('objetives');
-            $table->text('history');
-            $table->string('dni_club');
-            $table->date('birthdate');
-            $table->string('address');
-            $table->string('lat');
-            $table->string('lon');
-            $table->string('logo');
+            $table->text('who_are')->nullable();
+            $table->text('schedule_meetings')->nullable();
+            $table->text('objetives')->nullable();
+            $table->text('history')->nullable();
+            $table->string('dni_club')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('address')->nullable();
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/app.js') }}"></script>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -82,12 +83,31 @@
                     Laravel
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-12" style="margin-top:10px;">
+
+                    <h3>Contactanos!</h3>
+                    <form class="form" action="/contacts" method="post">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                          <label>Nombre</label>
+                          <input type="text" class="form-control" name="name" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                          <label>Email</label>
+                          <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                          <label>Asunto o Tema</label>
+                          <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
+                        </div>
+                        <div class="form-group">
+                          <label>Mensaje</label>
+                          <textarea class="form-control" rows="5" name="message"></textarea>
+                        </div>
+                          <button type="submit" class="btn pull-right btn-success">Enviar!</button>
+                    </form>
+
                 </div>
             </div>
         </div>

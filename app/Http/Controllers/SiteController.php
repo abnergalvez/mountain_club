@@ -8,7 +8,9 @@ class SiteController extends Controller
 {
     public function index()
     {
-        //
+        return view('admin.info_club.index')
+        ->with('club',\App\Site::first())
+        ->with('section','club');
     }
 
 
@@ -20,7 +22,8 @@ class SiteController extends Controller
 
     public function store(Request $request)
     {
-        //
+        \App\Site::create($request->all());
+        return redirect('/info_club');
     }
 
 
@@ -38,7 +41,8 @@ class SiteController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        \App\Site::find($id)->update($request->all());
+        return redirect('/info_club');
     }
 
 

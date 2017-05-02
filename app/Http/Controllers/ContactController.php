@@ -8,7 +8,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        //
+        return view('admin.contacts.index')->with('contacts',\App\Contact::all());
     }
 
 
@@ -20,7 +20,8 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        //
+        \App\Contact::create($request->all());
+        return redirect('/');
     }
 
 

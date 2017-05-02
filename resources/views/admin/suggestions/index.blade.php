@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><strong>Sugerencias Socios</strong></div>
+                <div class="panel-heading"><strong>Propuestas Socios</strong></div>
                 <div class="panel-body">
                     <div class="col-md-12" style="margin-top:10px;">
                         <table class="datatable table table-striped table-bordered" cellspacing="0" width="100%">

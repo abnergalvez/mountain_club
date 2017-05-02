@@ -15,11 +15,11 @@ class CreateMeetingsTable extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->date('date');
             $table->string('place');
-            $table->string('attendant');
-            $table->text('record'); //acta
-            $table->string('photo');
+            $table->string('attendant'); //encarcado
+            $table->text('record')->nullable(); //acta
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

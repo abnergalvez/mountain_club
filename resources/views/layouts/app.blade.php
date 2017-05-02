@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
@@ -23,7 +24,7 @@
 
     <style media="screen">
       body {
-      background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;
+     /** background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;**/
       background-size: cover;
         -moz-background-size: cover;
         -webkit-background-size: cover;
@@ -44,6 +45,7 @@
 </head>
 <body>
     <div id="app">
+        
         @include('layouts.nav_menu')
 
         @yield('content')

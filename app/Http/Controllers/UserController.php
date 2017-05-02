@@ -9,7 +9,9 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('admin.users.index')->with('users',\App\User::all());
+        return view('admin.users.index')
+        ->with('users',\App\User::all())
+        ->with('section','socios');
     }
 
 
@@ -35,13 +37,17 @@ class UserController extends Controller
 
     public function show($id)
     {
-        return view('admin.users.show')->with('user', \App\User::find($id));
+        return view('admin.users.show')
+        ->with('user', \App\User::find($id))
+        ->with('section','socios');
     }
 
 
     public function edit($id)
     {
-        return view('admin.users.edit')->with('user', \App\User::find($id));
+        return view('admin.users.edit')
+        ->with('user', \App\User::find($id))
+        ->with('section','socios');
     }
 
 
@@ -81,14 +87,32 @@ class UserController extends Controller
       $user->training = $request->training;
       $user->own_equipment = $request->own_equipment;
       $user->save();
+        if(\Auth::user()->role == 'admin')
+        {
+            return redirect('/users');
+        }
+        else
+        {
+            return redirect('/profile_member');
+        }
 
-        return redirect('/users');
     }
 
     public function getSuggestions()
     {
       $user=\Auth::user();
         return view('admin.suggestions.mysuggestions')->with('suggestions',$user->suggestions)->with('user',$user);
+    }
+
+    public function getPayments()
+    {
+        $user=\Auth::user();
+        return view('admin.payments.mypayments')->with('payments',$user->payments);
+    }
+
+    public function getProfile()
+    {
+        return view('admin.users.myprofile')->with('user',\Auth::user());
     }
 
 }
