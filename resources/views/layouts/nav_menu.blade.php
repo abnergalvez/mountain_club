@@ -56,7 +56,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/users') }}">Gestionar</a></li>
-                            <li><a href="{{ url('/suggestions') }}">Sugerencias</a></li>
+                            <li><a href="{{ url('/suggestions') }}">Propuestas</a></li>
                             <li><a href="{{ url('/payments') }}">Pagos</a></li>
                         </ul>
                     </li>
@@ -81,13 +81,19 @@
                         </ul>
                     </li>
                     @endif
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">Mi Cuenta</a></li>
+                            <li><a href="">Perfil</a></li>
+                            <li><a href="/suggestions_member">Mis Propuestas</a></li>
+                            <li><a href="">Mi Asistencia</a></li>
+                            <li><a href="">Mi Cuotas</a></li>
+                            <li><a href="">Mis Pedidos de Equipo</a></li>
+                            <li><a href="">Mi Participacion Actividades</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

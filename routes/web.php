@@ -20,12 +20,17 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('/suggestions_member','UserController@getSuggestions');
+    Route::post('/suggestions','SuggestionController@store');
+
   Route::group(['middleware' => 'admin'], function () {
 
     Route::resource('/users','UserController');
     Route::post('/users_update_profile','UserController@updateProfile');
     Route::resource('/payments','PaymentController');
-    Route::resource('/suggestions','SuggestionController');
+    Route::get('/suggestions','SuggestionController@index');
+    Route::get('/suggestions/{id?}/answer','SuggestionController@edit');
+    Route::post('/suggestions/{id?}','SuggestionController@update');
 
   });
 

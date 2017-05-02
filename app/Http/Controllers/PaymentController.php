@@ -8,7 +8,9 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        return view('admin.payments.index');
+        return view('admin.payments.index')
+        ->with('payments', \App\Payment::all())
+        ->with('users',\App\User::all());
     }
 
 
@@ -20,7 +22,8 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
-        //
+      \App\Payment::create($request->all());
+      return redirect('/payments');
     }
 
 
@@ -44,6 +47,7 @@ class PaymentController extends Controller
 
     public function destroy($id)
     {
-        //
+      \App\Payment::destroy($id);
+      return redirect('/payments');
     }
 }

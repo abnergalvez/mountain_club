@@ -14,53 +14,58 @@
                 <div class="panel-body">
                     <form class="form" action="/users" method="post">
                         {{ csrf_field() }}
-                        <div class="col-md-6">
-
+                        <div class="col-md-2">
                             <div class="form-group">
                               <label>Nombre</label>
                               <input type="text" class="form-control" name="name" placeholder="Nombre"required>
                             </div>
-                            <div class="form-group">
-                              <label>Apellidos</label>
-                              <input type="text" class="form-control" name="last_name" placeholder="Apellidos"required>
-                            </div>
-                            <div class="form-group">
-                                <label>Tipo de Usuario</label>
-                                <select class="form-control" name="role" required>
-                                  <option value="member" >Socio</option>
-                                  <option value="admin" >Administrador</option>
-                                </select>
-                            </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control" name="last_name" placeholder="Apellidos"required>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                              <label>Tipo de Usuario</label>
+                              <select class="form-control" name="role" required>
+                                <option value="member" >Socio</option>
+                                <option value="admin" >Administrador</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                              <label>Cargo / Posicion</label>
+                              <select class="form-control" name="club_position" required>
+                                <option value="only_member" >Sin Cargo</option>
+                                <option value="president" >Presidente</option>
+                                <option value="secretary" >Secretario</option>
+                                <option value="treasurer" >Tesorero</option>
+                                <option value="director" >Director Asociado</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="Email"required>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                          </div>
+                          <button type="submit" class="btn pull-right btn-success">Crear</button>
+                        </div>
 
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Cargo / Posicion</label>
-                                <select class="form-control" name="club_position" required>
-                                  <option value="only_member" >Sin Cargo</option>
-                                  <option value="president" >Presidente</option>
-                                  <option value="secretary" >Secretario</option>
-                                  <option value="treasurer" >Tesorero</option>
-                                  <option value="director" >Director Asociado</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                              <label>Email</label>
-                              <input type="email" class="form-control" name="email" placeholder="Email"required>
-                            </div>
-                            <div class="form-group">
-                              <label>Password</label>
-                              <input type="password" class="form-control" name="password" required>
-                            </div>
-                            <button type="submit" class="btn pull-right btn-success">Crear</button>
-                        </div>
                     </form>
 
 
 
-                    <div class="col-md-12">
-                        <hr>
-                        <h5 ><strong>Lista</strong></h5>
+                    <div class="col-md-12" style="margin-top:10px;">
                         <table class="datatable table table-striped table-bordered nowrap" cellspacing="0" width="100%">
                             <thead>
                                 <tr>

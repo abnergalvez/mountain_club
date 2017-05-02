@@ -8,8 +8,8 @@ class SuggestionController extends Controller
 {
     public function index()
     {
-        return view('admin.suggestions.index');
-    
+        return view('admin.suggestions.index')->with('suggestions',\App\Suggestion::all());
+
     }
 
 
@@ -21,7 +21,9 @@ class SuggestionController extends Controller
 
     public function store(Request $request)
     {
-        //
+
+      \App\Suggestion::create($request->all());
+      return redirect('/suggestions_member');
     }
 
 
@@ -33,18 +35,27 @@ class SuggestionController extends Controller
 
     public function edit($id)
     {
-        //
+      return view('admin.suggestions.edit')->with('suggestion',\App\Suggestion::find($id));
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        $suggestion = \App\Suggestion::find($id);
+        $suggestion->answer = $request->answer;
+        $suggestion->save();
+        return redirect('/suggestions');
+
     }
 
 
     public function destroy($id)
     {
         //
+    }
+
+    public function userSuggestionStore(Request $request)
+    {
+
     }
 }

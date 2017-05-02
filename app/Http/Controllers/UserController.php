@@ -70,7 +70,25 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
+      $user = \App\User::find($request->user_id);
+      $user->birthdate = $request->birthdate;
+      $user->phone = $request->phone;
+      $user->dni = $request->dni;
+      $user->profession = $request->profession;
+      $user->blood_type = $request->blood_type;
+      $user->health_problems = $request->health_problems;
+      $user->experience = $request->experience;
+      $user->training = $request->training;
+      $user->own_equipment = $request->own_equipment;
+      $user->save();
+
         return redirect('/users');
+    }
+
+    public function getSuggestions()
+    {
+      $user=\Auth::user();
+        return view('admin.suggestions.mysuggestions')->with('suggestions',$user->suggestions)->with('user',$user);
     }
 
 }
