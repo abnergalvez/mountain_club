@@ -76,6 +76,7 @@ class UserController extends Controller
 
     public function updateProfile(Request $request)
     {
+
       $user = \App\User::find($request->user_id);
       $user->birthdate = $request->birthdate;
       $user->phone = $request->phone;
@@ -86,7 +87,16 @@ class UserController extends Controller
       $user->experience = $request->experience;
       $user->training = $request->training;
       $user->own_equipment = $request->own_equipment;
+
+      if($request->photo)
+      {
+          $photo_name = $user->name.''.$request->file('photo')->getClientOriginalName();
+          $request->file('photo')->move( base_path() . '/public/img/profile', $photo_name);
+          $user->photo = $photo_name;
+      }
+
       $user->save();
+
         if(\Auth::user()->role == 'admin')
         {
             return redirect('/users');
@@ -113,6 +123,14 @@ class UserController extends Controller
     public function getProfile()
     {
         return view('admin.users.myprofile')->with('user',\Auth::user());
+    }
+
+    public function getAssistance()
+    {
+
+        return view('admin.meetings.myassistance')
+            ->with('meetings',\App\Meeting::All())
+            ->with('user',\Auth::user());
     }
 
 }

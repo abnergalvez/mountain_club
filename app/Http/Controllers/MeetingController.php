@@ -8,8 +8,9 @@ class MeetingController extends Controller
 {
     public function index()
     {
+        $meetings = \App\Meeting::orderBy('date', 'desc')->get();
         return view('admin.meetings.index')
-                ->with('meetings', \App\Meeting::all())
+                ->with('meetings', $meetings)
                 ->with('section', 'reuniones');
     }
 
@@ -75,10 +76,6 @@ class MeetingController extends Controller
         return redirect('/meetings');
     }
 
-    public function listAssistance()
-    {
-
-    }
 
     public function listRecords()
     {
@@ -102,6 +99,53 @@ class MeetingController extends Controller
         $meeting->record = $request->record;
         $meeting->save();
         return redirect('/meetings_records');
+    }
+
+    public function listAssistance()
+    {
+        $meetings = \App\Meeting::orderBy('date', 'desc')->get();
+
+        $meetingsAssigned = $meetings->filter(function ($meeting) {
+            return $meeting->isAssigned();
+        });
+
+        $meetingsUnAssigned = $meetings->filter(function ($meeting) {
+            return !$meeting->isAssigned();
+        });
+
+        return view('admin.meetings.assistance')
+            ->with('meetingsAssigned', $meetingsAssigned)
+            ->with('meetingsUnAssigned', $meetingsUnAssigned)
+            ->with('users', \App\User::all())
+            ->with('section', 'reuniones');
+    }
+
+    public function editAssistance($id)
+    {
+        $meeting = \App\Meeting::find($id);
+        $user_registers = $meeting->users;
+        $users = \App\User::all();
+        $diff = $users->diff($user_registers);
+        $user_no_registers = $diff->all();
+        //dd($diff);
+        return view('admin.meetings.edit_assistance')
+            ->with('users_reg', $user_registers)
+            ->with('users_noreg', $diff)
+            ->with('meeting', $meeting)
+            ->with('section', 'reuniones');
+    }
+
+    public function saveAssistance(Request $request)
+    {
+        $meeting = \App\Meeting::find($request->meeting_id);
+
+        if($meeting->users)
+        {
+            $meeting->users()->detach();
+        }
+
+        $meeting->users()->attach($request->to);
+        return redirect('/meetings_assistance');
     }
 
 

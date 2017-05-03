@@ -91,7 +91,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/profile_member">Perfil</a></li>
                             <li><a href="/suggestions_member">Mis Propuestas</a></li>
-                            <li><a href="">Mi Asistencia</a></li>
+                            <li><a href="/assistance_member">Mi Asistencia</a></li>
                             <li><a href="/payments_member">Mis Pagos & Cuotas</a></li>
                             <li><a href="">Mis Pedidos de Equipo</a></li>
                             <li><a href="">Mi Participacion Actividades</a></li>

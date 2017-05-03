@@ -13,7 +13,6 @@
     <link href="{{url('css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{url('css/responsive.bootstrap.min.css')}}" rel="stylesheet">
 
-
     <script src="{{ asset('js/app.js') }}"></script>
 
     <script type="text/javascript" src="{{url('js/jquery.dataTables.min.js')}}"></script>
@@ -21,10 +20,11 @@
     <script type="text/javascript" src="{{url('js/dataTables.fixedHeader.min.js')}}"></script>
     <script type="text/javascript" src="{{url('js/dataTables.responsive.min.js')}}"></script>
     <script type="text/javascript" src="{{url('js/responsive.bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url('js/multiselect.min.js')}}"></script>
 
     <style media="screen">
       body {
-     /** background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;**/
+      background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;
       background-size: cover;
         -moz-background-size: cover;
         -webkit-background-size: cover;
@@ -45,7 +45,7 @@
 </head>
 <body>
     <div id="app">
-        
+
         @include('layouts.nav_menu')
 
         @yield('content')

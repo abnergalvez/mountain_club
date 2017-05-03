@@ -13,6 +13,9 @@
 
         <!-- Styles -->
         <style>
+            body{
+                background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;
+            }
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -73,14 +76,14 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <!--<a href="{{ url('/register') }}">Register</a>-->
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    CLUB<br> ANDINO<br>  PIRAMIDE
                 </div>
 
                 <div class="col-md-12" style="margin-top:10px;">

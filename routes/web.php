@@ -24,6 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/suggestions_member','UserController@getSuggestions');
     Route::post('/suggestions','SuggestionController@store');
     Route::get('/payments_member','UserController@getPayments');
+    Route::get('/assistance_member','UserController@getAssistance');
 
     Route::get('/profile_member','UserController@getProfile');
     Route::post('/users_update_profile','UserController@updateProfile');
@@ -44,6 +45,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/meetings','MeetingController');
 
     Route::get('/meetings_assistance','MeetingController@listAssistance');
+    Route::get('/meetings_assistance/{id?}/edit','MeetingController@editAssistance');
+    Route::post('/meetings_assistance','MeetingController@saveAssistance');
 
     Route::get('/meetings_records','MeetingController@listRecords');
     Route::get('/meetings_records/{id?}/edit','MeetingController@editRecords');
