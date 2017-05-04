@@ -51,6 +51,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/meetings_records','MeetingController@listRecords');
     Route::get('/meetings_records/{id?}/edit','MeetingController@editRecords');
     Route::post('/meetings_records','MeetingController@saveRecord');
+
+    Route::resource('/equipments','EquipmentController');
+    Route::get('/lend_equipments','EquipmentController@listLendEquipments');
+    Route::post('/lend_equipments','EquipmentController@saveLendEquipments');
+
   });
 
   Route::group(['middleware' => 'member'], function () {

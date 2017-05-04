@@ -16,9 +16,10 @@ class CreateEquipmentTable extends Migration
         Schema::create('equipment', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('brand');
-            $table->string('model');
-            $table->integer('cost')->unsigned();
+            $table->string('brand')->nullable();
+            $table->string('model')->nullable();
+            $table->string('photo')->nullable();
+            $table->integer('cost')->unsigned()->nullable();
             $table->timestamps();
         });
     }

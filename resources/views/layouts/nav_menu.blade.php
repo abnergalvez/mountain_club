@@ -47,8 +47,8 @@
                             Equipo <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">Inventario</a></li>
-                            <li><a href="">Prestamos</a></li>
+                            <li><a href="{{ url('/equipments') }}">Inventario</a></li>
+                            <li><a href="{{ url('/lend_equipments') }}">Prestamos</a></li>
                         </ul>
                     </li>
                     <li class="dropdown @if(isset($section)){{ $section=='socios'?'active':''}}@endif">

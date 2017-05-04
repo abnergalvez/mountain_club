@@ -21,7 +21,13 @@ class SuggestionController extends Controller
 
     public function store(Request $request)
     {
-
+        if($request->photo)
+        {
+            $photo_name = $request->file('photo')->getClientOriginalName();
+            $request->file('photo')->move( base_path() . '/public/img/equipments', $photo_name);
+            $meeting->photo = $photo_name;
+        }
+           
       \App\Suggestion::create($request->all());
       return redirect('/suggestions_member');
     }

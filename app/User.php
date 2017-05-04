@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
       return $this->role == 'member' ? true : false;
     }
+
+    public function isAssigned()
+    {
+        return \DB::table('equipment_user')->where('user_id', $this->id)->count() ? true : false;
+    }
 }

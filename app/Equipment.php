@@ -6,8 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipment extends Model
 {
+    protected $fillable = ['name','brand', 'model', 'cost','photo'];
+
     public function users()
     {
          return $this->belongsToMany('App\User');
+    }
+
+    public function isAssigned()
+    {
+        return \DB::table('equipment_user')->where('equipment_id', $this->id)->count() ? true : false;
     }
 }

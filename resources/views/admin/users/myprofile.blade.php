@@ -13,7 +13,7 @@
                         <h4>{{$user->email}}</h4>
                         <br>
                         @if($user->photo!=null)
-                        <img src="{{url('img/'.$user->photo)}}" alt="" class="img-thumbnail" style="width: 200px; height: 200px;">
+                        <img src="{{url('img/profile/'.$user->photo)}}" alt="" class="img-thumbnail" style="width: 200px; height: 200px;">
                         @else
                         <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:150px;"></span>
                         @endif
