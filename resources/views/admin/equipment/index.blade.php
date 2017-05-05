@@ -72,7 +72,7 @@
                                         @if($equipment->users->count() == 0)
                                             Club Piramide
                                         @else
-                                            {{ $equipment->users->first()->name }}
+                                            {{ $equipment->users->first()->name }} {{ $equipment->users->first()->last_name }}
                                         @endif
 
                                     </td>

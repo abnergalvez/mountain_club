@@ -23,10 +23,17 @@
                           </div>
                         </div>
                         <div class="col-md-3">
+
+
+
                           <div class="form-group">
                               <label>Encargado</label>
+                              <select class="" name="attendant">
+                                <option value=""></option>
+                              </select>
                               <input type="text" class="form-control" name="attendant" required>
                           </div>
+                          <button type="button"  class="btn pull-right btn-defaul" name="button"> No esta en esta lista</button>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">

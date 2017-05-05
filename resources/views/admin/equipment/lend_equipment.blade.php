@@ -65,7 +65,7 @@
                             <tbody>
                                 @forelse($users_assigned as $user_ass)
                                 <tr>
-                                    <td>{{ $user_ass->equipments->first()->created_at }}</td>
+                                    <td>{{ $user_ass->equipments->first()->pivot->updated_at }}</td>
                                     <td>{{ $user_ass->name }} {{ $user_ass->last_name }}</td>
                                     <td>
                                         @forelse($user_ass->equipments as $equipment)
@@ -74,8 +74,8 @@
                                         @endforelse
                                     </td>
                                     <td>
-                                        <a class="btn btn-primary btn-xs" href="/lend_equipments/{{$user_ass->id}}/edit"  title="Editar" style="float:left;margin-right:5px;">
-                                            <span class="glyphicon glyphicon-edit"></span>
+                                        <a class="btn btn-primary btn-xs" href="/lend_equipments/{{$user_ass->id}}/edit" data-toggle="tooltip" title="Devolver o Editar" style="float:left;margin-right:5px;">
+                                          <span class="glyphicon glyphicon-backward" ></span>  <span class="glyphicon glyphicon-edit"></span>
                                         </a>
                                     </td>
                                 </tr>

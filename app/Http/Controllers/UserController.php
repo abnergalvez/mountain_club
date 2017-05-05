@@ -127,10 +127,19 @@ class UserController extends Controller
 
     public function getAssistance()
     {
-
         return view('admin.meetings.myassistance')
             ->with('meetings',\App\Meeting::All())
             ->with('user',\Auth::user());
+    }
+
+    public function getLendEquipment()
+    {
+
+      $user = \Auth::user();
+      $equipment_registers = $user->equipments;
+      return view('admin.equipment.mylendequipment')
+          ->with('equipments',$equipment_registers)
+          ->with('user',\Auth::user());
     }
 
 }

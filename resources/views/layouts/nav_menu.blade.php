@@ -93,7 +93,7 @@
                             <li><a href="/suggestions_member">Mis Propuestas</a></li>
                             <li><a href="/assistance_member">Mi Asistencia</a></li>
                             <li><a href="/payments_member">Mis Pagos & Cuotas</a></li>
-                            <li><a href="">Mis Pedidos de Equipo</a></li>
+                            <li><a href="/lend_equipments_member">Mis Pedidos de Equipo</a></li>
                             <li><a href="">Mi Participacion Actividades</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"

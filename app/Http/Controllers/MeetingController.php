@@ -11,6 +11,7 @@ class MeetingController extends Controller
         $meetings = \App\Meeting::orderBy('date', 'desc')->get();
         return view('admin.meetings.index')
                 ->with('meetings', $meetings)
+                ->with('users', \App\User::all())
                 ->with('section', 'reuniones');
     }
 

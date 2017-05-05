@@ -40,6 +40,8 @@
                  responsive: true
                 });
                 new $.fn.dataTable.FixedHeader( table );
+
+                $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
 </head>

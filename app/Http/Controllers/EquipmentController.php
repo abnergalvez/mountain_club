@@ -104,4 +104,18 @@ class EquipmentController extends Controller
         $user->equipments()->attach($request->to);
         return redirect('/lend_equipments');
     }
+
+    public function editLendEquipments($id)
+    {
+      $user = \App\User::find($id);
+      $equipment_registers = $user->equipments;
+      $equipments = \App\Equipment::all();
+      $diff = $equipments->diff($equipment_registers);
+
+      return view('admin.equipment.edit_lend_equipment')
+          ->with('equipments_reg', $equipment_registers)
+          ->with('equipments_noreg', $diff)
+          ->with('user', $user)
+          ->with('section', 'equipo');
+    }
 }

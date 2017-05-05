@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/suggestions','SuggestionController@store');
     Route::get('/payments_member','UserController@getPayments');
     Route::get('/assistance_member','UserController@getAssistance');
+    Route::get('/lend_equipments_member','UserController@getLendEquipment');
 
     Route::get('/profile_member','UserController@getProfile');
     Route::post('/users_update_profile','UserController@updateProfile');
@@ -55,6 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/equipments','EquipmentController');
     Route::get('/lend_equipments','EquipmentController@listLendEquipments');
     Route::post('/lend_equipments','EquipmentController@saveLendEquipments');
+    Route::get('/lend_equipments/{id?}/edit','EquipmentController@editLendEquipments');
 
   });
 

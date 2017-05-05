@@ -33,7 +33,7 @@ class User extends Authenticatable
 
     public function equipments()
     {
-         return $this->belongsToMany('App\Equipment');
+         return $this->belongsToMany('App\Equipment')->withTimestamps();;
     }
 
     public function activities()
