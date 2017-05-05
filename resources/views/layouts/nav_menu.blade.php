@@ -66,8 +66,8 @@
                             Actividades <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="">Gestionar</a></li>
-                            <li><a href="">Participacion Socios</a></li>
+                            <li><a href="/activities">Gestionar</a></li>
+                            <li><a href="/activities_assistance">Participacion Socios</a></li>
                         </ul>
                     </li>
                     <li class="dropdown @if(isset($section)){{ $section=='club'?'active':''}}@endif">
@@ -94,7 +94,7 @@
                             <li><a href="/assistance_member">Mi Asistencia</a></li>
                             <li><a href="/payments_member">Mis Pagos & Cuotas</a></li>
                             <li><a href="/lend_equipments_member">Mis Pedidos de Equipo</a></li>
-                            <li><a href="">Mi Participacion Actividades</a></li>
+                            <li><a href="/activities_member">Mi Participacion Actividades</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

@@ -15,14 +15,18 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('type');
-            $table->text('description');
-            $table->text('learning');
-            $table->text('goals');
-            $table->dateTime('init_date');
-            $table->dateTime('finish_date');
-            $table->string('photo');
-            $table->string('video');
+            $table->string('name');
+            $table->string('coordinators_guides')->nullable();
+            $table->string('security_managers')->nullable();
+            $table->string('type')->nullable();
+            $table->string('place')->nullable();
+            $table->text('description')->nullable();
+            $table->text('learning')->nullable();
+            $table->text('goals')->nullable();
+            $table->dateTime('init_date')->nullable();
+            $table->dateTime('finish_date')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('video')->nullable();
             $table->timestamps();
         });
     }

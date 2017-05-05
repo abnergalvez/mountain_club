@@ -58,6 +58,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/lend_equipments','EquipmentController@saveLendEquipments');
     Route::get('/lend_equipments/{id?}/edit','EquipmentController@editLendEquipments');
 
+    Route::resource('/activities','ActivityController');
+
+    Route::get('/activities_assistance','ActivityController@listActivityAssistance');
+    Route::get('/activities_assistance/{id?}/edit','ActivityController@editActivityAssistance');
+    Route::post('/activities_assistance','ActivityController@saveActivityAssistance');
+
   });
 
   Route::group(['middleware' => 'member'], function () {
