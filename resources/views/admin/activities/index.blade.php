@@ -79,13 +79,23 @@
                         <div class="col-md-3">
                             <div class="form-group">
                               <label>Fecha Inicial *</label>
-                              <input type="text" class="form-control" name="init_date" required>
+                                <div class="input-group input-append date datetimepicker">
+                                    <input type="text" class="form-control add-on" data-format="yyyy-MM-dd"  name="init_date" required >
+                                    <span class="input-group-btn">
+                                      <button class="btn btn-default add-on" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                    </span>
+                                  </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                               <label>Fecha Final *</label>
-                              <input type="text" class="form-control" name="finish_date" required>
+                                <div class="input-group input-append date datetimepicker">
+                                    <input type="text" class="form-control add-on" data-format="yyyy-MM-dd"  name="finish_date" required >
+                                    <span class="input-group-btn">
+                                      <button class="btn btn-default add-on" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                    </span>
+                                  </div>
                             </div>
                         </div>
 
@@ -158,4 +168,12 @@
       </div>
     </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $('.datetimepicker').datetimepicker({
+      language: 'es-Es',
+      pickTime: false
+    });
+  });
+</script>
 @endsection

@@ -26,7 +26,12 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label>Fecha de Fundacion</label>
-                                <input type="text" class="form-control" name="birthdate" value="{{$club != null ? $club->birthdate : ''}}" required>
+                                  <div class="input-group input-append date datetimepicker">
+                                      <input type="text" class="form-control add-on" data-format="yyyy-MM-dd" name="birthdate" value="{{$club != null ? $club->birthdate : ''}}" required >
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-default add-on" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                      </span>
+                                    </div>
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -37,9 +42,10 @@
                             </div>
 
                             <div class="col-md-3">
+                                <img src="/img/site/{{$club->logo}}" alt="" height="70">
                               <div class="form-group">
                                 <label>Logo</label>
-                                <input type="file" class="form-control" name="logo">
+                                <input type="file" class="form-control" name="club_logo">
                               </div>
                             </div>
 
@@ -79,6 +85,14 @@
     </div>
 </div>
 
+<script type="text/javascript">
+  $(function() {
+    $('.datetimepicker').datetimepicker({
+      language: 'es-Es',
+      pickTime: false
+    });
+  });
+</script>
 <script src="//tinymce.cachefly.net/4.3/tinymce.min.js"></script>
 <script>tinymce.init({selector:'textarea'});</script>
 
