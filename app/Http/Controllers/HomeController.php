@@ -26,11 +26,11 @@ class HomeController extends Controller
           $user=\Auth::user();
           if($user->isAdmin())
           {
-            return view('admin.dashboard');
+            return view('admin.dashboard')->with('section','home');
           }
           elseif($user->isMember())
           {
-            return view('member.home');
+            return view('member.home')->with('section','home');
           }
           else
           {

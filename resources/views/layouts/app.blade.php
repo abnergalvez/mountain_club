@@ -24,7 +24,7 @@
 
     <style media="screen">
       body {
-      /**background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;**/
+      background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;**/
       background-size: cover;
         -moz-background-size: cover;
         -webkit-background-size: cover;

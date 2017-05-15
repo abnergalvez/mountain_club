@@ -142,4 +142,11 @@ class UserController extends Controller
           ->with('user',\Auth::user());
     }
 
+    public function getActivitiesAssistance()
+    {
+      return view('admin.activities.myactivityassistance')
+          ->with('activities',\App\Activity::All())
+          ->with('user',\Auth::user());
+    }
+
 }

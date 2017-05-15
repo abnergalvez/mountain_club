@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/suggestions','SuggestionController@store');
     Route::get('/payments_member','UserController@getPayments');
     Route::get('/assistance_member','UserController@getAssistance');
+    Route::get('/activities_member','UserController@getActivitiesAssistance');
     Route::get('/lend_equipments_member','UserController@getLendEquipment');
 
     Route::get('/profile_member','UserController@getProfile');

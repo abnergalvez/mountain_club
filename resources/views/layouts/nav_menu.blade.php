@@ -31,7 +31,11 @@
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @else
 
+                <li class="@if(isset($section)){{ $section=='home'?'active':''}}@endif">
+                  <a href="/home">Inicio</a>
+                </li>
                   @if(\Auth::user()->role == 'admin')
+
                     <li class="dropdown @if(isset($section)){{ $section=='reuniones'?'active':''}}@endif">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Reuniones <span class="caret"></span>
