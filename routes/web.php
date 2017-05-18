@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')
+        ->with('site',\App\Site::first())
+        ->with('news',\App\News::all())
+        ->with('users',\App\User::all());
 });
 
 Auth::routes();

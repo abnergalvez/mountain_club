@@ -34,7 +34,10 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
            <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <a class="navbar-brand" href="#homeSlider">Club Andino Piramide</a> </div>
+        <!--<a class="navbar-brand" href="#homeSlider">Club Andino Piramide</a> -->
+        <a class="" href="#homeSlider"><img src="/img/site/logo22.png" alt="" height=50 style="margin:5px;"></a>
+    </div>
+
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><a href="#home">INICIO</a></li>
@@ -44,7 +47,12 @@
           <li><a href="#portfolio">GALERIA</a></li>
           <li><a href="#blog">NOTICIAS</a></li>
           <li><a href="#contact">CONTACTOS</a></li>
+          @if(Auth::user())
+          <li><a href="/home">MI CUENTA</a></li>
+          @else
           <li><a href="/login">LOGIN</a></li>
+          @endif
+
         </ul>
       </div>
     </div>
@@ -56,37 +64,33 @@
 <div id="home">
   <div id="homeSlider" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="item active" style="background-image:url(http://placehold.it/1600x887);">
+      <div class="item active" style="background-image:url({{url('/img/slider/slide1.png')}});">
         <div class="container">
           <div class="carousel-caption">
-            <div class="slide-logo">
-              <img src="/img/logo.png" alt="" width="150">
-            </div>
-            <h2 class="sltext">A CREATIVE DESIGN AGENCY<br>
-              WITH BRIGHTER IDEAS THAT WORK</h2>
-            <a class="getst" href="#" role="button">Sign up today</a> </div>
+              <div class="">
+                  <img src="/img/site/logo24.png" alt="" height=100 style="margin:5px;">
+                </div>
+            <h2 class="sltext">Cub Andino<br> Piramide
+            </h2>
+            <a class="getst" href="#contact" role="button">Inscribete!</a> </div>
         </div>
       </div>
-      <div class="item" style="background-image:url(http://placehold.it/1600x887);">
+      <div class="item" style="background-image:url({{url('/img/slider/slide2.png')}});">
         <div class="container">
           <div class="carousel-caption">
-            <div class="slide-logo">
-              <h1>C</h1>
-              <span>CARNA</span> </div>
-            <h2 class="sltext">A CREATIVE DESIGN AGENCY<br>
-              WITH BRIGHTER IDEAS THAT WORK</h2>
-            <a class="getst" href="#" role="button">Sign up today</a> </div>
+            <div class="">
+               </div>
+            <h2 class="sltext">Ascenciones,<br> Trekking <br>y mucha Aventura!</h2>
+            <a class="getst" href="#services" role="button">Nuestras Actividades</a> </div>
         </div>
       </div>
-      <div class="item" style="background-image:url(http://placehold.it/1600x887);">
+      <div class="item" style="background-image:url({{url('/img/slider/slide3.png')}});">
         <div class="container">
           <div class="carousel-caption">
-            <div class="slide-logo">
-              <h1>C</h1>
-              <span>CARNA</span> </div>
-            <h2 class="sltext">A CREATIVE DESIGN AGENCY<br>
-              WITH BRIGHTER IDEAS THAT WORK</h2>
-            <a class="getst" href="#" role="button">Sign up today</a> </div>
+            <div class="">
+              </div>
+            <h2 class="sltext">¿Quieres Conocernos?</h2>
+            <a class="getst" href="#about" role="button">NUESTRO CLUB</a> </div>
         </div>
       </div>
     </div>
@@ -103,92 +107,49 @@
 <!-- Service Section
     ================================================== -->
 <div class="services" id="services">
+<div class="feature">
   <div class="container">
+      <div class="head_section">
+        <h2>NUESTRAS ACTIVIDADES</h2>
+        <p></p>
+      </div>
     <div class="row">
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
-          <div class="sicon"><i class="fa fa-cogs"></i></div>
-          <h2>WEB DESIGN</h2>
+          <div class=""><img class="fa" src="/img/icons/snowed-mountains.png" alt="" height=70 ></div>
+          <h2>Ascenciones & Travesias</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
           <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
-          <div class="sicon"><i class="fa fa-camera-retro"></i></div>
-          <h2>PHOTOGRAPHY</h2>
+    <div class=""><img class="fa" src="/img/icons/climbing-sport.png" alt="" height=70 ></div>
+          <h2>Trekking & Senderismo</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
           <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
-          <div class="sicon"><i class="fa fa-rocket"></i></div>
-          <h2>BRANDING & IDENTITY</h2>
+           <div class=""><img class="fa" src="/img/icons/plate-fork-and-knife.png" alt="" height=70 ></div>
+          <h2>Confraternizacion</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
           <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
-          <div class="sicon"><i class="fa fa-trello"></i></div>
-          <h2>RESPONSIVE</h2>
+          <div class=""><img class="fa" src="/img/icons/classroom.png" alt="" height=70 ></div>
+          <h2>Capacitacion e Instruccion</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
           <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
       </div>
     </div>
   </div>
-  <div class="feature">
-    <div class="container">
-      <div class="head_section">
-        <h2>FEATURED SERVICES</h2>
-        <p>VIVAMUS QUIS RISUS UT TURPIS SAGITTIS VENENATIS. ALIQUAM ENIM SEM PRETIUM VITAE, POSUERE AC MATTIS VITAE ARCU</p>
-      </div>
-      <div class="feature-content">
-        <div class="feature_list left">
-          <ul>
-            <li class="line1">
-              <div class="ficon"><i class="fa fa-desktop"></i></div>
-              <div  class="fcontent">
-                <h4>Search Engine Optimization</h4>
-                <p>Sed in pulvinar sollicitudin augul Suspend<br>
-                  mauris tortor, posuere ut, semper eget</p>
-              </div>
-            </li>
-            <li class="line2">
-              <div class="ficon"><i class="fa fa-beer"></i></div>
-              <div  class="fcontent">
-                <h4>Marketing</h4>
-                <p>Sed in pulvinar sollicitudin augul Suspend <br>
-                  mauris tortor, posuere ut, semper eget</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="feature_image"><img src="images/feature_image.png" alt=""></div>
-        <div class="feature_list right">
-          <ul>
-            <li class="line3">
-              <div class="ficon"><i class="fa fa-tachometer"></i></div>
-              <div  class="fcontent">
-                <h4>Search Engine Optimization</h4>
-                <p>Sed in pulvinar sollicitudin augul Suspend<br>
-                  mauris tortor, posuere ut, semper eget</p>
-              </div>
-            </li>
-            <li class="line4">
-              <div class="ficon dark"><i class="fa fa-cloud-upload"></i></div>
-              <div  class="fcontent">
-                <h4>Marketing</h4>
-                <p>Sed in pulvinar sollicitudin augul Suspend <br>
-                  mauris tortor, posuere ut, semper eget</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+
+
   </div>
 </div>
 <!-- / Services Close -->
@@ -197,16 +158,15 @@
     ================================================== -->
 <div class="aboutus" id="about">
   <div class="container">
-    <div class="clientsay">
-      <div class="quote-icon"><img src="images/quote.png" alt=""></div>
-      <p>Curabitur id lectus. Phasellus venenatis commodo sapien In in felis insed vamus quis risus ut turpis sagittis
-        venenatis aliquam enim sem pretium vitae posuere ac mattis vitae arcu integer</p>
-      <span class="sepceby"> MISSION STATMENT BY : <strong>JOHN SMITH</strong><br>
-      - CEO & CO-FOUNDER </span> </div>
+      <div class="head_section">
+        <h2>NUESTRO CLUB</h2>
+        <p></p>
+      </div>
+
     <div class="row">
       <div class="col-md-4">
         <div class="about_item">
-          <h3 class="about_title hilight">WHO WE ARE</h3>
+          <h3 class="about_title hilight">QUIENES SOMOS</h3>
           <div class="who_weare">
             <div class="whbanner carousel slide" id="whBanner">
               <!-- Carousel items -->
@@ -220,46 +180,26 @@
               </div>
               <!--/carousel-inner-->
               <a class="left-control" href="#whBanner" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="right-control" href="#whBanner" data-slide="next"><i class="fa  fa-angle-right"></i></a> </div>
-            <p>Fusce velit est, blandit quis, scelerisque nec, faucibus quis ips Fusce in nisl ut elit ultrices hendrerit.</p>
-            <p>Suspendisse lobortis ante accumsan est. Vivamus scelerisqu accumsan dolor.Aenean diam felis, pulvinar at, pellentes qued sed aliquet vel tellus.</p>
+
+            {!! html_entity_decode($site->who_are) !!}
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="choos_us">
-          <h3  class="about_title">WHY CHOOSE US</h3>
+          <h3  class="about_title"> NUESTRA HISTORIA</h3>
           <div class="whchoise">
-            <p>Class aptent taciti sociosqu ad litora torquent per conubia nos aper inceptos himenaeos. Vivamus eget risus. </p>
-            <ul class="timeline">
-              <li>
-                <div class="timeline-badge">27</div>
-                <div class="timeline-panel">
-                  <h4>Clients <br>
-                    Worldwide</h4>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-badge">362</div>
-                <div class="timeline-panel">
-                  <h4 >Projects <br>
-                    Finished</h4>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-badge">14</div>
-                <div class="timeline-panel">
-                  <h4>Awards <br>
-                    Won</h4>
-                </div>
-              </li>
-              <li class="timeline-inverted">
-                <div class="timeline-badge">10K</div>
-                <div class="timeline-panel">
-                  <h4 >Hours Of <br>
-                    Work Done</h4>
-                </div>
-              </li>
-            </ul>
+              <ul class="process">
+                <li>
+                  <div class="process-title">
+                    <div class="process-badge"><i class="fa fa-calendar"></i></div>
+                    Fecha de Funcdacion</div>
+                  <p>{{$site->birthdate}}</p>
+                </li>
+
+              </ul>
+            {!! html_entity_decode($site->history) !!}
+
           </div>
         </div>
       </div>
