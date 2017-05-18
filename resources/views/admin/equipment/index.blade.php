@@ -10,26 +10,37 @@
                         {{ csrf_field() }}
                         <div class="col-md-3">
                             <div class="form-group">
-                              <label>Nombre (Descriptivo)</label>
+                              <label>Nombre (Descriptivo) *</label>
                               <input type="text" class="form-control" name="name" required>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                           <div class="form-group">
-                            <label>Marca</label>
-                            <input type="text" class="form-control" name="brand" >
+                            <label>Marca *</label>
+                            <input type="text" class="form-control" name="brand" required>
                           </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                           <div class="form-group">
-                              <label>Modelo</label>
-                              <input type="text" class="form-control" name="model">
+                              <label>Modelo *</label>
+                              <input type="text" class="form-control" name="model" required>
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
                               <label>Foto</label>
                               <input type="file" class="form-control" name="photo_equipment">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                              <label>Status *</label>
+                              <select class="form-control" name="status" required>
+                                <option value="used">Usado (Buenas Condiciones)</option>
+                                <option value="new">Nuevo</option>
+                                <option value="old">Algo Deteriorado/Viejo </option>
+                                <option value="bad">Malas Condiciones</option>
+                              </select>
                           </div>
                         </div>
                         <div class="col-md-2">
@@ -50,6 +61,7 @@
                                     <th>Nombre</th>
                                     <th>Marca</th>
                                     <th>Modelo</th>
+                                    <th>Estado</th>
                                     <th>Foto</th>
                                     <th>Costo</th>
                                     <th>Lo tiene?</th>
@@ -62,6 +74,13 @@
                                     <td>{{ $equipment->name }}</td>
                                     <td>{{ $equipment->brand }}</td>
                                     <td>{{ $equipment->model }}</td>
+                                    <td>
+                                      @if($equipment->status == 'used')  Usado (Buenas Condiciones) @endif
+                                      @if($equipment->status == 'new')  Nuevo @endif
+                                      @if($equipment->status == 'old') Deteriorado Viejo @endif
+                                      @if($equipment->status == 'bad') Malas Condiciones @endif
+
+                                    </td>
                                     <td>
                                         <a href="/img/equipments/{{ $equipment->photo }}">
                                             <img src="/img/equipments/{{ $equipment->photo }}" alt="" height="40">

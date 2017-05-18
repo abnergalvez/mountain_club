@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipment extends Model
 {
-    protected $fillable = ['name','brand', 'model', 'cost','photo'];
+    protected $fillable = ['name','brand', 'model', 'cost','photo','status'];
 
     public function users()
     {

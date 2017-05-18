@@ -42,11 +42,11 @@
                             </div>
                             <div class="form-group">
                               <label>Email</label>
-                              <input type="email" class="form-control" name="email" placeholder="Email" value="{{$user->email}}" required>
+                              <input type="email" autocomplete="off" class="form-control" name="email" placeholder="Email" value="{{$user->email}}" required>
                             </div>
                             <div class="form-group">
                               <label>Password</label>
-                              <input type="password" class="form-control" name="password">
+                              <input type="password" autocomplete="off" class="form-control" name="password">
                             </div>
                             <button type="submit" class="btn pull-right btn-success">Actualizar</button>
                         </div>

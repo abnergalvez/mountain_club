@@ -116,7 +116,12 @@
 
                         <div class="col-md-3">
                             <div class="form-group">
-                              <img src="/img/activities/{{$activity->photo}}" alt=" " height="50"><br><small>foto anterior</small>
+                              @if($activity->photo != '-')
+                              <img src="/img/activities/{{$activity->photo}}" alt=" " height="50">
+                              @else
+                               <h4>Sin Foto</h4>
+                              @endif
+                              <br><small>foto anterior</small><br>
                               <label>Foto</label>
                               <input type="file" class="form-control" name="photo_activity" >
                             </div>

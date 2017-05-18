@@ -11,7 +11,7 @@
                       {{ csrf_field() }}
                       <div class="col-md-3">
                         <div class="form-group">
-                            <label>Socio</label>
+                            <label>Socio *</label>
                             <select class="form-control" name="user_id" required>
                               @forelse($users as $user)
                               <option value="{{$user->id}}" >{{ $user->name }} {{ $user->last_name }}</option>
@@ -24,14 +24,14 @@
 
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label>Monto</label>
+                          <label>Monto *</label>
                           <input type="number" class="form-control" name="amount" required>
                         </div>
                       </div>
 
                       <div class="col-md-3">
                         <div class="form-group">
-                            <label>Tipo de Pago</label>
+                            <label>Tipo de Pago *</label>
                             <select class="form-control" name="type" required>
                               <option value="mensual" >Mensual</option>
                               <option value="inscripcion" >Inscripcion</option>
@@ -42,7 +42,7 @@
 
                       <div class="col-md-3">
                         <div class="form-group">
-                            <label>Mes</label>
+                            <label>Mes *</label>
                             <select class="form-control" name="month" required>
                               <option value="enero" >Enero</option>
                               <option value="febrero" >Febrero</option>

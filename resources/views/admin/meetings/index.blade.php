@@ -11,14 +11,19 @@
                     <form class="form" action="/meetings" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="col-md-3">
-                            <div class="form-group">
-                              <label>Fecha</label>
-                              <input type="text" class="form-control" name="date" required>
-                            </div>
+                          <div class="form-group">
+                            <label>Fecha *</label>
+                              <div class="input-group input-append date datetimepicker">
+                                  <input type="text" class="form-control add-on" data-format="yyyy-MM-dd"  name="date" required >
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default add-on" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                  </span>
+                                </div>
+                          </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                            <label>Lugar</label>
+                            <label>Lugar *</label>
                             <input type="text" class="form-control" name="place" required>
                           </div>
                         </div>
@@ -27,18 +32,21 @@
 
 
                           <div class="form-group">
-                              <label>Encargado</label>
-                              <select class="" name="attendant">
-                                <option value=""></option>
+                              <label>Encargado *</label>
+                              <select class="form-control" name="attendant" required>
+                                @forelse($users as $user)
+                                <option value="{{$user->name}} {{$user->last_name}}">{{$user->name}} {{$user->last_name}}</option>
+                                @empty
+                                @endforelse
                               </select>
-                              <input type="text" class="form-control" name="attendant" required>
+                            <!--  <input type="text" class="form-control" name="attendant" required>-->
                           </div>
-                          <button type="button"  class="btn pull-right btn-defaul" name="button"> No esta en esta lista</button>
+
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
                               <label>Foto Reunion</label>
-                              <input type="file" class="form-control" name="photo" required>
+                              <input type="file" class="form-control" name="photo">
                           </div>
                           <button type="submit" class="btn pull-right btn-success">Crear Reunion</button>
                         </div>
@@ -63,7 +71,15 @@
                                     <td>{{ $meeting->date }}</td>
                                     <td>{{ $meeting->place }}</td>
                                     <td>{{ $meeting->attendant }}</td>
-                                    <td><a href="/img/meetings/{{ $meeting->photo }}"> <img src="/img/meetings/{{ $meeting->photo }}" alt="" height="60"></a></td>
+                                    <td>
+                                      @if($meeting->photo!= null)
+                                      <a href="/img/meetings/{{ $meeting->photo }}" target="_blank">
+                                        <img src="/img/meetings/{{ $meeting->photo }}" alt="" height="60">
+                                      </a>
+                                      @else
+                                      <h4>Sin Imagen</h4>
+                                      @endif
+                                    </td>
 
                                     <td>
 
@@ -94,4 +110,12 @@
       </div>
     </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $('.datetimepicker').datetimepicker({
+      language: 'es-Es',
+      pickTime: false
+    });
+  });
+</script>
 @endsection

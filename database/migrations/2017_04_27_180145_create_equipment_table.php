@@ -18,7 +18,9 @@ class CreateEquipmentTable extends Migration
             $table->string('name');
             $table->string('brand')->nullable();
             $table->string('model')->nullable();
+            $table->string('status')->nullable();
             $table->string('photo')->nullable();
+
             $table->integer('cost')->unsigned()->nullable();
             $table->timestamps();
         });

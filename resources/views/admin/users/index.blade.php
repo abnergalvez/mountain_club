@@ -8,23 +8,23 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Socios</strong></div>
                 <div class="panel-body">
-                    <form class="form" action="/users" method="post">
+                    <form class="form" action="/users" method="post" autocomplete="off">
                         {{ csrf_field() }}
                         <div class="col-md-2">
                             <div class="form-group">
-                              <label>Nombre</label>
+                              <label>Nombre *</label>
                               <input type="text" class="form-control" name="name" placeholder="Nombre"required>
                             </div>
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <label>Apellidos</label>
+                            <label>Apellidos *</label>
                             <input type="text" class="form-control" name="last_name" placeholder="Apellidos"required>
                           </div>
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                              <label>Tipo de Usuario</label>
+                              <label>Tipo de Usuario *</label>
                               <select class="form-control" name="role" required>
                                 <option value="member" >Socio</option>
                                 <option value="admin" >Administrador</option>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                              <label>Cargo / Posicion</label>
+                              <label>Cargo / Posicion *</label>
                               <select class="form-control" name="club_position" required>
                                 <option value="only_member" >Sin Cargo</option>
                                 <option value="president" >Presidente</option>
@@ -45,14 +45,14 @@
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email"required>
+                            <label>Email *</label>
+                            <input type="email" class="form-control" autocomplete="off" name="email" placeholder="Email"required>
                           </div>
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" name="password" required>
+                            <label>Password *</label>
+                            <input type="password" class="form-control" name="password" autocomplete="new-password" required>
                           </div>
                           <button type="submit" class="btn pull-right btn-success">Crear</button>
                         </div>

@@ -37,12 +37,12 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                   <label>Direccion (Reuniones)</label>
-                                  <input type="text" class="form-control" name="address" value="{{$club != null ? $club->address : ''}}" required>
+                                  <input type="text" class="form-control" name="address" value="{{ $club != null ? $club->address : ''}}" required>
                               </div>
                             </div>
 
                             <div class="col-md-3">
-                                <img src="/img/site/{{$club->logo}}" alt="" height="70">
+                                <img src="/img/site/{{$club != null ? $club->logo : ''}}" alt="" height="70">
                               <div class="form-group">
                                 <label>Logo</label>
                                 <input type="file" class="form-control" name="club_logo">

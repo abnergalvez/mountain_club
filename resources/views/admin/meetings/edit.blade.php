@@ -30,13 +30,17 @@
                           </div>
                         </div>
                         <div class="col-md-3">
+                          @if($meeting->photo!= null)
                             <img src="/img/meetings/{{$meeting->photo}}" alt="" height="100">
+                          @else
+                           <h3>Sin Imagen</h3>
+                          @endif
                             <br>
                             <small>foto anterior</small>
                             <br>
                           <div class="form-group">
                               <label>Foto Reunion</label>
-                              <input type="file" class="form-control" name="photo" required>
+                              <input type="file" class="form-control" name="photo" >
                           </div>
                           <button type="submit" class="btn pull-right btn-success">Actualizar!</button>
                         </div>
