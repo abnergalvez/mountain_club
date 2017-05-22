@@ -8,17 +8,17 @@ class UsersTableSeeder extends Seeder
     {
         \DB::table('users')->insert([
         [
-          'name' => 'Abner',
-          'last_name' => 'Galvez',
-          'email' => 'agc005@gmail.com',
-          'password' => bcrypt('abnerosk8'),
+          'name' => 'Administrador',
+          'last_name' => 'Club',
+          'email' => 'admin@clubpiramide.cl',
+          'password' => bcrypt('Piramide2017'),
           'role' => 'admin'
         ],
         [
-          'name' => 'Miembro',
+          'name' => 'Socio',
           'last_name' => 'Club',
-          'email' => 'miembro@mail.com',
-          'password' => bcrypt('miembro1234'),
+          'email' => 'socio@mail.com',
+          'password' => bcrypt('Piramide2017'),
           'role' => 'member'
         ]
       ]);
