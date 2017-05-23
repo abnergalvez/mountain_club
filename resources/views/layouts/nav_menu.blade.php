@@ -12,9 +12,12 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Club Andino Piramide') }}
+            <a class="" href="{{ url('/') }}">
+                <!--{{ config('app.name', 'Club Andino Piramide') }}-->
+                <img src="/img/site/logo22.png" alt="" height="45" style="margin-top: 3px;">
             </a>
+
+
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
