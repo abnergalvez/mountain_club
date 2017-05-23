@@ -52,7 +52,8 @@
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/equipments') }}">Inventario</a></li>
-                            <li><a href="{{ url('/lend_equipments') }}">Prestamos</a></li>
+                            <li><a href="{{ url('/lend_equipments') }}">Prestar / Devolver</a></li>
+                            <li><a href="{{ url('/lend_history') }}">Historial de Prestamos</a></li>
                         </ul>
                     </li>
                     <li class="dropdown @if(isset($section)){{ $section=='socios'?'active':''}}@endif">

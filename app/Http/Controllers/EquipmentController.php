@@ -94,15 +94,143 @@ class EquipmentController extends Controller
 
     public function saveLendEquipments(Request $request)
     {
+
         $user= \App\User::find($request->user);
 
-        if($user->equipments)
+      if(!$user->equipments->isEmpty())
+        {
+            $equipments_tmp = [];
+            $request_to = [];
+            foreach ($user->equipments as $equipment)
+            {
+                array_push($equipments_tmp , "$equipment->id");
+            }
+            $tox = $request->to;
+             $lengz = count($request->to);
+            for($i=0; $i<$lengz; $i++)
+            {
+                array_push($request_to , $tox[$i]);
+            }
+
+            $equipos_antes = collect( $equipments_tmp );
+            $equipos_despues = collect( $request_to );
+
+            if($request->to)
+            {
+                $arr_inter = $equipos_despues->intersect($equipos_antes);
+
+                if($arr_inter->count() > 0 )
+                {
+
+                    $arr_diff1 =$equipos_antes->diff($arr_inter);
+                    $arr_diff2 = $equipos_despues->diff($arr_inter);
+
+
+                    if($arr_diff1->count() > 0 )
+                    {
+                        foreach($arr_diff1 as $diff1)
+                        {
+                            $hist = new \App\HistLoan;
+                            $hist->user_id = $user->id;
+                            $hist->equipment_id = $diff1;
+                            $hist->case = 'return';
+                            $hist->save();
+                        }
+                    }
+                    if($arr_diff2->count() > 0 )
+                    {
+
+
+                        foreach($arr_diff2 as $diff2)
+                        {
+                            $hist = new \App\HistLoan;
+                            $hist->user_id = $user->id;
+                            $hist->equipment_id = $diff2;
+                            $hist->case = 'loan';
+                            $hist->save();
+                        }
+                        //prestar $arr_diff2;
+                    }
+
+
+                }
+                else
+                {
+                    $to = $request->to;
+                    $leng = count($to);
+                    for($i=0; $i<$leng; $i++)
+                    {
+                        $hist = new \App\HistLoan;
+                        $hist->user_id = $user->id;
+                        $hist->equipment_id = $to[$i];
+                        $hist->case = 'loan';
+                        $hist->save();
+                    }
+
+
+                    $leng = count($equipments_tmp);
+                    for($i=0; $i<$leng; $i++)
+                    {
+                        $hist = new \App\HistLoan;
+                        $hist->user_id = $user->id;
+                        $hist->equipment_id = $equipments_tmp[$i];
+                        $hist->case = 'return';
+                        $hist->save();
+                    }
+
+                }
+
+
+
+            }
+            else
+            {
+
+
+                $leng = count($equipments_tmp);
+                for($i=0; $i<$leng; $i++)
+                {
+                    $hist = new \App\HistLoan;
+                    $hist->user_id = $user->id;
+                    $hist->equipment_id = $equipments_tmp[$i];
+                    $hist->case = 'return';
+                    $hist->save();
+                }
+                // dd($equipments_tmp);
+                 //devolvio todo!
+            }
+        }
+        else
+        {
+            if($request->to)
+            {
+                $to = $request->to;
+                $leng = count($to);
+                for($i=0; $i<$leng; $i++)
+                {
+                    $hist = new \App\HistLoan;
+                    $hist->user_id = $user->id;
+                    $hist->equipment_id = $to[$i];
+                    $hist->case = 'loan';
+                    $hist->save();
+                }
+
+            }
+
+        }
+
+    if($user->equipments)
         {
             $user->equipments()->detach();
         }
 
         $user->equipments()->attach($request->to);
         return redirect('/lend_equipments');
+    }
+
+    public function listHistoryLendEquipments()
+    {
+        return view('admin.equipment.history_lend')->with('lend_equipments',\App\HistLoan::all());
     }
 
     public function editLendEquipments($id)

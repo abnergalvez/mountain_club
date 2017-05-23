@@ -62,6 +62,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/lend_equipments','EquipmentController@saveLendEquipments');
     Route::get('/lend_equipments/{id?}/edit','EquipmentController@editLendEquipments');
 
+    Route::get('/lend_history','EquipmentController@listHistoryLendEquipments');
+
     Route::resource('/activities','ActivityController');
 
     Route::get('/activities_assistance','ActivityController@listActivityAssistance');
