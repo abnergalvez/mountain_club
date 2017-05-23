@@ -13,6 +13,11 @@ class Equipment extends Model
          return $this->belongsToMany('App\User')->withTimestamps();
     }
 
+    public function histloans()
+    {
+        return $this->hasMany('App\HistLoan');
+    }
+
     public function isAssigned()
     {
         return \DB::table('equipment_user')->where('equipment_id', $this->id)->count() ? true : false;

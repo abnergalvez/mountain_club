@@ -3,7 +3,7 @@
 <!--[if IE 7 ]>	<html lang="en" class="ie ie7"> <![endif]-->
 <!--[if IE 8 ]>	<html lang="en" class="ie ie8"> <![endif]-->
 <!--[if IE 9 ]>	<html lang="en" class="ie ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="es"> <!--<![endif]-->
 <head>
 <meta charset="utf-8">
 <title>Club Andino Piramide - Sitio en Construccion!!!</title>
@@ -18,7 +18,6 @@
 <body id="home">
 <div id="Header">
 <div class="wrapper">
-
 	<h1>Club Andino Piramide <br><img src="/countdownpage/images/logo24.png" alt="" height="60"></h1>
 </div>
 </div>

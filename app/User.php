@@ -15,6 +15,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function histloans()
+    {
+        return $this->hasMany('App\HistLoan');
+    }
 
     public function payments()
     {
