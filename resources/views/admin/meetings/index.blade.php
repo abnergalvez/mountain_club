@@ -62,6 +62,7 @@
                                     <th>Lugar</th>
                                     <th>Encargado</th>
                                     <th>Foto Reunion</th>
+                                    <th> % Asistencia</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -80,7 +81,7 @@
                                       <h4>Sin Imagen</h4>
                                       @endif
                                     </td>
-
+                                    <td>{{ $meeting->assistance == null ? 'Sin Asistencia Aun': $meeting->assistance.'%' }}</td>
                                     <td>
 
 

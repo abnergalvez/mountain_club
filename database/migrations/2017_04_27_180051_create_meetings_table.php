@@ -20,6 +20,7 @@ class CreateMeetingsTable extends Migration
             $table->string('attendant'); //encarcado
             $table->text('record')->nullable(); //acta
             $table->string('photo')->nullable();
+            $table->integer('assistance')->nullable(); //% asistencia
             $table->timestamps();
         });
     }

@@ -146,6 +146,10 @@ class MeetingController extends Controller
         }
 
         $meeting->users()->attach($request->to);
+
+        $meeting->assistance =  ($meeting->users()->count() * 100) / \App\User::all()->count();
+        $meeting->save();
+
         return redirect('/meetings_assistance');
     }
 

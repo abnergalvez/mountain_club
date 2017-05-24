@@ -17,6 +17,7 @@ class CreateEquipmentUserTable extends Migration
             $table->increments('id');
             $table->integer('equipment_id')->unsigned();
             $table->integer('user_id')->unsigned();
+            $table->date('return')->nullable();
             $table->timestamps();
         });
     }
