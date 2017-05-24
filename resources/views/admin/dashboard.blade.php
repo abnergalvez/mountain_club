@@ -13,7 +13,11 @@
                 <hr>
                 <div class="statistic-group">
                     <div class="small statistic danger ">
+                        @if($meetings->count() > 0 )
                         <div class="value"> {{ round($meetings->sum('assistance') / $meetings->count(),1)}} %</div>
+                        @else
+                        <div class="value">0</div>
+                        @endif
                         <div class="label">Asistencia Reuniones</div>
                      </div>
 
