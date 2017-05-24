@@ -12,7 +12,7 @@
     <link href="{{url('css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{url('css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{url('css/responsive.bootstrap.min.css')}}" rel="stylesheet">
-   <link href="{{url('css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
+    <link href="{{url('css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
 
     <script src="{{ asset('js/app.js') }}"></script>
 
@@ -24,17 +24,8 @@
     <script type="text/javascript" src="{{url('js/dataTables.responsive.min.js')}}"></script>
     <script type="text/javascript" src="{{url('js/responsive.bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{url('js/multiselect.min.js')}}"></script>
-
-
-    <style media="screen">
-      body {
-      background: url("{{url('img/piramide.jpg')}}") no-repeat center center fixed;**/
-      background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-    }
-  </style>
+    <script src="https://use.fontawesome.com/eece1d93dc.js"></script>
+    <link href="{{url('/css/dashboard.css')}}" rel="stylesheet">
     <script>
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
