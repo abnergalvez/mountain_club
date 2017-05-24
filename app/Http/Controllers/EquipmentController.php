@@ -224,7 +224,7 @@ class EquipmentController extends Controller
             $user->equipments()->detach();
         }
 
-        $user->equipments()->attach($request->to);
+        $user->equipments()->attach($request->to, array('return' => $request->return_date));
         return redirect('/lend_equipments');
     }
 
