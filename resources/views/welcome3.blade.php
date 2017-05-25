@@ -23,6 +23,7 @@
 <!-- Custom styles for this template -->
 <link href="css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" >
+
 </head>
 <!-- NAVBAR
 ================================================== -->
@@ -72,7 +73,7 @@
                 </div>
             <h2 class="sltext">Cub Andino<br> Piramide
             </h2>
-            <a class="getst" href="#contact" role="button">Inscribete!</a> </div>
+            </div>
         </div>
       </div>
       <div class="item" style="background-image:url({{url('/img/slider/slide2.png')}});">
@@ -81,7 +82,7 @@
             <div class="">
                </div>
             <h2 class="sltext">Ascenciones,<br> Trekking <br>y mucha Aventura!</h2>
-            <a class="getst" href="#services" role="button">Nuestras Actividades</a> </div>
+             </div>
         </div>
       </div>
       <div class="item" style="background-image:url({{url('/img/slider/slide3.png')}});">
@@ -90,7 +91,7 @@
             <div class="">
               </div>
             <h2 class="sltext">¿Quieres Conocernos?</h2>
-            <a class="getst" href="#about" role="button">NUESTRO CLUB</a> </div>
+            </div>
         </div>
       </div>
     </div>
@@ -120,7 +121,7 @@
           <h2>Ascenciones & Travesias</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
-          <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
+         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
@@ -128,7 +129,7 @@
           <h2>Trekking & Senderismo</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
-          <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
+           </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
@@ -136,7 +137,7 @@
           <h2>Confraternizacion</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
-          <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
+          </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
@@ -144,8 +145,9 @@
           <h2>Capacitacion e Instruccion</h2>
           <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
             cosngue eget arcu.</p>
-          <a class="more" href="#"><i class="fa fa-angle-right"></i></a> </div>
+          </div>
       </div>
+
     </div>
   </div>
 
@@ -158,11 +160,9 @@
     ================================================== -->
 <div class="parallax parallax_d">
   <div class="container">
-    <h2>CARNA LOVES THE WEB</h2>
-    <p> WE MAKE BEAUTIFUL APPLICATIONS AND WEBSITES THAT ARE BUILT TO LAST AND
-      THAT IS WHY OUR CLIENTS LOVES US </p>
+
     <div class="clearfix"></div>
-    <a href="#" class="plink">BUY THIS DESIGN</a> </div>
+    </div>
 </div>
 <!-- / Parallax Close Close -->
 
@@ -178,68 +178,70 @@
     <div class="row">
       <div class="col-md-4">
         <div class="about_item">
-          <h3 class="about_title hilight">QUIENES SOMOS</h3>
+
           <div class="who_weare">
-            <div class="whbanner carousel slide" id="whBanner">
-              <!-- Carousel items -->
-              <div class="carousel-inner">
-                <div class="item active"> <img src="http://placehold.it/768x498" alt=""> </div>
-                <!--/item-->
-                <div class="item"> <img src="http://placehold.it/768x498" alt=""> </div>
-                <!--/item-->
-                <div class="item"> <img src="http://placehold.it/768x498" alt=""> </div>
-                <!--/item-->
-              </div>
-              <!--/carousel-inner-->
-              <a class="left-control" href="#whBanner" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="right-control" href="#whBanner" data-slide="next"><i class="fa  fa-angle-right"></i></a> </div>
-            @if(isset($site->who_are))
-            {!! html_entity_decode($site->who_are) !!}
-            @endif
+          <ul class="process">
+            <li>
+              <div class="process-title">
+                <div class="process-badge"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+                Quienes Somos</div>
+                @if(isset($site->who_are))
+                {!! html_entity_decode($site->who_are) !!}
+                @endif
+            </li>
+          </ul>
+
+
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="choos_us">
-          <h3  class="about_title"> NUESTRA HISTORIA</h3>
+
           <div class="whchoise">
               <ul class="process">
                 <li>
                   <div class="process-title">
-                    <div class="process-badge"><i class="fa fa-calendar"></i></div>
-                    Fecha de Funcdacion</div>
+                    <div class="process-badge"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+                    Fecha de Fundacion</div>
                   @if(isset($site->birthdate))
                   <p>{{$site->birthdate}}</p>
                   @endif
                 </li>
+                <li>
+                  <div class="process-title">
+                    <div class="process-badge"><i class="fa fa-history" aria-hidden="true"></i></div>
+                    Reseña Historica</div>
+                    @if(isset($site->history))
+                {!! html_entity_decode($site->history) !!}
+                @endif
+                </li>
 
               </ul>
-                @if(isset($site->history))
-            {!! html_entity_decode($site->history) !!}
-            @endif
 
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="the_process">
-          <h3 class="about_title">THE PROCESS</h3>
+
           <ul class="process">
             <li>
               <div class="process-title">
-                <div class="process-badge"><i class="fa fa-magic"></i></div>
-                Brainstorming & Planning</div>
-              <p>Semper eget Donec eget tellus. Maecenas non dolo acnunc malesuada elementum. Suspendisse elit</p>
+                <div class="process-badge"><i class="fa fa-calendar"></i></div>
+                Horario</div>
+              <p>asdasdasdaa asd asd asd asd asd</p>
             </li>
-            <li class="inverted">
+            <li>
               <div class="process-title">
-                <div class="process-badge"><i class="fa fa-coffee"></i></div>
-                Brainstorming & Planning</div>
+                <div class="process-badge"><i class="fa fa-map-marker"></i></div>
+                Lugar</div>
               <p>Semper eget Donec eget tellus. Maecenas non dolo acnunc malesuada elementum. Suspendisse elit</p>
             </li>
             <li>
               <div class="process-title">
-                <div class="process-badge"><i class="fa fa-rocket"></i></div>
-                Brainstorming & Planning</div>
+                <div class="process-badge"><i class="fa fa-dot-circle-o"></i></div>
+                Objetivos</div>
               <p>Semper eget Donec eget tellus. Maecenas non dolo acnunc malesuada elementum. Suspendisse elit</p>
             </li>
           </ul>
@@ -254,9 +256,8 @@
     ================================================== -->
 <div class="parallax parallax_a">
   <div class="container">
-    <h2>Simplicity will stand out,<br>
-      while complexity will get lost in the crowd.</h2>
-    <a href="#" class="plink">BUY THIS DESIGN</a> </div>
+
+     </div>
 </div>
 <!-- / Parallax Close Close -->
 
@@ -273,205 +274,60 @@
     <div class="row">
       <div id="team-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="item active">
-            <div class="row">
+
+
+        <?php
+        $i_user = 0;
+        $i = 0;
+        foreach ( $users as $user){
+         if($i_user == 0 && $i == 0)
+            {
+                echo  '<div class="item active"><div class="row">';
+            }
+          if($i_user == 0 && $i >0)
+          {
+              echo  '<div class="item"><div class="row">';
+          }
+        ?>
               <div class="col-sm-3">
                 <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x177" alt="" class="img-circle"  /> </div>
+                  <div class="photo"> <img  src="{{ url('/img/profile/'.$user->photo)}}" alt="" class="img-circle"  /> </div>
                   <div class="info">
-                    <h4 class="name">JENNIFER ALEXA</h4>
-                    <span class="designation">MANAGING DIRECTOR</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
+                    <h4 class="name">{{ $user->name }} {{ $user->last_name }}</h4>
+                    <span class="designation">
+                        @if($user->club_position == 'only_member') Socio @endif
+                        @if($user->club_position == 'president') Presidente @endif
+                        @if($user->club_position == 'secretary') Secretario @endif
+                        @if($user->club_position == 'treasurer') Tesorero @endif
+                        @if($user->club_position == 'director') Director Asociado @endif
+                        @if($user->club_position == null) Socio @endif
+                    </span>
+                    <p>
+                        {{ $user->experience }}
+                    </p>
                     <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="{{ $user->facebook_url}}"><i class="fa fa-facebook"></i></a></li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x178" alt="" class="img-circle"  /> </div>
-                  <div class="info">
-                    <h4 class="name">JOHN SMITH</h4>
-                    <span class="designation">TECHNICAL DIRECTOR</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x178" alt="" class="img-circle" /> </div>
-                  <div class="info">
-                    <h4 class="name">THOMAS HANS</h4>
-                    <span class="designation">WEB DEVELOPER</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x178" alt="" class="img-circle"  /> </div>
-                  <div class="info">
-                    <h4 class="name">LISA NANCY</h4>
-                    <span class="designation">FRONT-END DESIGNER</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x177" alt=""  class="img-circle" /> </div>
-                  <div class="info">
-                    <h4 class="name">JENNIFER ALEXA</h4>
-                    <span class="designation">MANAGING DIRECTOR</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x178" alt="" class="img-circle"  /> </div>
-                  <div class="info">
-                    <h4 class="name">JOHN SMITH</h4>
-                    <span class="designation">TECHNICAL DIRECTOR</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x178" alt="" class="img-circle"  /> </div>
-                  <div class="info">
-                    <h4 class="name">THOMAS HANS</h4>
-                    <span class="designation">WEB DEVELOPER</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="member">
-                  <div class="photo"> <img  src="http://placehold.it/178x178" alt="" class="img-circle"  /> </div>
-                  <div class="info">
-                    <h4 class="name">LISA NANCY</h4>
-                    <span class="designation">FRONT-END DESIGNER</span>
-                    <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper</p>
-                    <ul class="member_social">
-                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+          <?php
+              if($i_user == 3 && $i >= 0 || $users->count() == $i+1)
+              {
+                  echo  '</div></div>';
+              }
+
+            if($i_user == 3){ $i_user = 0; }else{ $i_user++; }
+           $i++;
+            }
+            ?>
+
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-2">
-        <div class="chart-wrap">
-          <div class="chart" data-dimension="120" data-text="75%" data-info="" data-width="15" data-fontsize="16" data-percent="75" data-fgcolor="#e4674e" data-bgcolor="#eee"></div>
-          <h4>WEB / MOBILE<br>
-            APP DEVELOPMENT</h4>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="chart-wrap">
-          <div class="chart" data-dimension="120" data-text="85%" data-info="" data-width="15" data-fontsize="16" data-percent="75" data-fgcolor="#999999" data-bgcolor="#eee"></div>
-          <h4>RESPONSIVE WEB <br>
-            DESIGN</h4>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="chart-wrap">
-          <div class="chart" data-dimension="120" data-text="85%" data-info="" data-width="15" data-fontsize="16" data-percent="85" data-fgcolor="#999999" data-bgcolor="#eee"></div>
-          <h4>SEO & SOCIAL <br>
-            MARKETING</h4>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="chart-wrap">
-          <div class="chart" data-dimension="120" data-text="98%" data-info="" data-width="15" data-fontsize="16" data-percent="98" data-fgcolor="#999999" data-bgcolor="#eee"></div>
-          <h4>WORDPRESS & <br>
-            HTML / CSS</h4>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="chart-wrap">
-          <div class="chart" data-dimension="120" data-text="90%" data-info="" data-width="15" data-fontsize="16" data-percent="90" data-fgcolor="#999999" data-bgcolor="#eee"></div>
-          <h4>FRONT-END<br>
-            DEVELOPMENT</h4>
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="chart-wrap">
-          <div class="chart" data-dimension="120" data-text="65%" data-info="" data-width="15" data-fontsize="16" data-percent="65" data-fgcolor="#999999" data-bgcolor="#eee"></div>
-          <h4>PHOTOGRAPHY<br>
-            & OTHERS</h4>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div>
 <!-- / our team close -->
@@ -480,11 +336,8 @@
     ================================================== -->
 <div class="parallax parallax_b">
   <div class="container">
-    <h3><i class="fa fa-twitter"></i> @CARNADESIGNS</h3>
-    <p>SED ARCU TORTOR MOLESTIE UT VARIUS CURSUS QUIS, EROS FUSCE VIVAMUS MALESUADA ANTE BIBENDUM METUS
-      INTEGER EGET LIGULA MORBI ET NEQUE PHASELLUS A AUGUE NUNC SAGITTIS DAPIBUS NISL </p>
     <div class="clearfix"></div>
-    <span class="twit-time">2 hours ago</span> <a href="#" class="plink">FOLLOW US</a> </div>
+     </div>
 </div>
 <!-- / Parallax Close Close -->
 
@@ -554,38 +407,7 @@
     ================================================== -->
 <div class="parallax parallax_c">
   <div class="container">
-    <div class="quote-icon"><img alt="" src="images/quote.png"></div>
-    <div class="client-feed carousel slide" id="cfeed">
-      <!-- Carousel items -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="cfeed-item"> <span class="cfeed-pic"><img src="http://placehold.it/140x140" alt=""></span>
-            <div class="clearfix"></div>
-            <p>PELLENTESQUE EU LACUS VIVAMUS LOREM ARCU SEMPER EGET ULLAMCORPER UT BLANDIT SED NISI
-              SED LECTUS SED NON METUS VESTIBULUM EGET SED </p>
-          </div>
-        </div>
-        <!--/item-->
-        <div class="item">
-          <div class="cfeed-item"> <span class="cfeed-pic"><img src="http://placehold.it/140x140" alt=""></span>
-            <div class="clearfix"></div>
-            <p>PELLENTESQUE EU LACUS VIVAMUS LOREM ARCU SEMPER EGET ULLAMCORPER UT BLANDIT SED NISI
-              SED LECTUS SED NON METUS VESTIBULUM EGET SED </p>
-          </div>
-        </div>
-        <!--/item-->
-        <div class="item">
-          <div class="cfeed-item"> <span class="cfeed-pic"><img src="http://placehold.it/140x140" alt=""></span>
-            <div class="clearfix"></div>
-            <p>PELLENTESQUE EU LACUS VIVAMUS LOREM ARCU SEMPER EGET ULLAMCORPER UT BLANDIT SED NISI
-              SED LECTUS SED NON METUS VESTIBULUM EGET SED </p>
-          </div>
-        </div>
-        <!--/item-->
-      </div>
-      <!--/carousel-inner-->
-      <a class="left-control" href="#cfeed" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="right-control" href="#cfeed" data-slide="next"><i class="fa  fa-angle-right"></i></a> </div>
-  </div>
+     </div>
 </div>
 <!-- / Parallax Close Close -->
 
@@ -624,7 +446,7 @@
                       posere semper eget cosngue eget arcu. Nam leo
                       pharetra in blandit adg tincidunt</p>
                   </div>
-                  <div class="coments"><i class="fa fa-comment-o"></i>5 Comments</div>
+
                 </div>
               </div>
               <div class="col-sm-4">
@@ -642,7 +464,7 @@
                       posere semper eget cosngue eget arcu. Nam leo
                       pharetra in blandit adg tincidunt</p>
                   </div>
-                  <div class="coments"><i class="fa fa-comment-o"></i>5 Comments</div>
+
                 </div>
               </div>
               <div class="col-sm-4">
@@ -660,7 +482,7 @@
                       posere semper eget cosngue eget arcu. Nam leo
                       pharetra in blandit adg tincidunt</p>
                   </div>
-                  <div class="coments"><i class="fa fa-comment-o"></i>5 Comments</div>
+
                 </div>
               </div>
             </div>
@@ -682,7 +504,7 @@
                       posere semper eget cosngue eget arcu. Nam leo
                       pharetra in blandit adg tincidunt</p>
                   </div>
-                  <div class="coments"><i class="fa fa-comment-o"></i>5 Comments</div>
+
                 </div>
               </div>
               <div class="col-sm-4">
@@ -700,7 +522,7 @@
                       posere semper eget cosngue eget arcu. Nam leo
                       pharetra in blandit adg tincidunt</p>
                   </div>
-                  <div class="coments"><i class="fa fa-comment-o"></i>5 Comments</div>
+
                 </div>
               </div>
               <div class="col-sm-4">
@@ -718,7 +540,7 @@
                       posere semper eget cosngue eget arcu. Nam leo
                       pharetra in blandit adg tincidunt</p>
                   </div>
-                  <div class="coments"><i class="fa fa-comment-o"></i>5 Comments</div>
+
                 </div>
               </div>
             </div>
@@ -730,14 +552,8 @@
 </div>
 <!-- / blog Close -->
 <div class="clearfix"></div>
-<!-- Parallax 05
-    ================================================== -->
-<div class="parallax parallax_e" id="bgvideo">
-  <p id="video-controls" class="videocontrol"><a href="#" class="tubular-play">Play</a> | <a href="#" class="tubular-pause">Pause</a></p>
 
-</div>
-<!-- / Parallax Close Close -->
-<div class="clearfix"></div>
+
 <!-- CONTACT Section
     ================================================== -->
 <div class="contact" id="contacto">
@@ -804,16 +620,6 @@
     <p>© 2017 Abner Galvez - All rights reserved. </p>
     <ul>
       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-      <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-      <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
-      <li><a href="#"><i class="fa fa-skype"></i></a></li>
-      <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-      <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-      <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
     </ul>
   </div>
 </div>
@@ -832,6 +638,7 @@
 <script type="text/javascript" src="js/docs.min.js"></script>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="js/gmap3.js"></script>
+<script src="https://use.fontawesome.com/eece1d93dc.js"></script>
 <script type="text/javascript">
       $(function(){
         $('#test1').gmap3({

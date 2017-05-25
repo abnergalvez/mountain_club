@@ -67,6 +67,10 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
+                                  <label>Facebook URL</label><br>
+                                  <input  type="text"  placeholder=""  value="{{$user->facebook_url}}"name="facebook_url" class="form-control"/>
+                                </div>
+                                <div class="form-group">
                                   <label>Foto (Cuadrada)</label>
                                   <input  type="file" placeholder="" name="photo" class=""/>
                                 </div>

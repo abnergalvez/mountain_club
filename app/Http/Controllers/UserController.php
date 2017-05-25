@@ -81,6 +81,7 @@ class UserController extends Controller
       $user->birthdate = $request->birthdate;
       $user->phone = $request->phone;
       $user->dni = $request->dni;
+      $user->facebook_url = $request->facebook_url;
       $user->profession = $request->profession;
       $user->blood_type = $request->blood_type;
       $user->health_problems = $request->health_problems;

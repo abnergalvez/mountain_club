@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('photo')->nullable();
             $table->date('birthdate')->nullable();
+            $table->string('facebook_url')->nullable();
             $table->string('dni')->nullable();
             $table->string('profession')->nullable();
             $table->string('phone')->nullable();
