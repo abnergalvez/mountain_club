@@ -41,12 +41,12 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><a href="#home">INICIO</a></li>
-          <li><a href="#services">ACTIVIDADES</a></li>
-          <li><a href="#about">CLUB</a></li>
-          <li><a href="#team">SOCIOS</a></li>
-          <li><a href="#portfolio">GALERIA</a></li>
-          <li><a href="#blog">NOTICIAS</a></li>
-          <li><a href="#contact">CONTACTOS</a></li>
+          <li><a href="#actividades">ACTIVIDADES</a></li>
+          <li><a href="#club">CLUB</a></li>
+          <li><a href="#socios">SOCIOS</a></li>
+          <li><a href="#galeria">GALERIA</a></li>
+          <li><a href="#noticias">NOTICIAS</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
           @if(Auth::user())
           <li><a href="/home">MI CUENTA</a></li>
           @else
@@ -106,7 +106,7 @@
 
 <!-- Service Section
     ================================================== -->
-<div class="services" id="services">
+<div class="services" id="actividades">
 <div class="feature">
   <div class="container">
       <div class="head_section">
@@ -154,9 +154,21 @@
 </div>
 <!-- / Services Close -->
 
+<!-- Parallax 04
+    ================================================== -->
+<div class="parallax parallax_d">
+  <div class="container">
+    <h2>CARNA LOVES THE WEB</h2>
+    <p> WE MAKE BEAUTIFUL APPLICATIONS AND WEBSITES THAT ARE BUILT TO LAST AND
+      THAT IS WHY OUR CLIENTS LOVES US </p>
+    <div class="clearfix"></div>
+    <a href="#" class="plink">BUY THIS DESIGN</a> </div>
+</div>
+<!-- / Parallax Close Close -->
+
 <!-- About Us Section
     ================================================== -->
-<div class="aboutus" id="about">
+<div class="aboutus" id="club">
   <div class="container">
       <div class="head_section">
         <h2>NUESTRO CLUB</h2>
@@ -180,8 +192,9 @@
               </div>
               <!--/carousel-inner-->
               <a class="left-control" href="#whBanner" data-slide="prev"><i class="fa fa-angle-left"></i></a> <a class="right-control" href="#whBanner" data-slide="next"><i class="fa  fa-angle-right"></i></a> </div>
-
+            @if(isset($site->who_are))
             {!! html_entity_decode($site->who_are) !!}
+            @endif
           </div>
         </div>
       </div>
@@ -194,11 +207,15 @@
                   <div class="process-title">
                     <div class="process-badge"><i class="fa fa-calendar"></i></div>
                     Fecha de Funcdacion</div>
+                  @if(isset($site->birthdate))
                   <p>{{$site->birthdate}}</p>
+                  @endif
                 </li>
 
               </ul>
+                @if(isset($site->history))
             {!! html_entity_decode($site->history) !!}
+            @endif
 
           </div>
         </div>
@@ -245,10 +262,10 @@
 
 <!-- Our Team Section
     ================================================== -->
-<div class="ourteam" id="team">
+<div class="ourteam" id="socios">
   <div class="container">
     <div class="head_section">
-      <h2>MEET THE CREATIVE PEOPLE</h2>
+      <h2>NUESTROS SOCIOS</h2>
       <div class="team-carousel-control"> <a class="left" href="#team-carousel" data-slide="prev"><i class=" fa fa-angle-left"></i></a> <a class="right" href="#team-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a> </div>
     </div>
   </div>
@@ -473,11 +490,11 @@
 
 <!-- PORTFOLIO Section
     ================================================== -->
-<div class="portfolio" id="portfolio">
+<div class="portfolio" id="galeria">
   <div class="container">
     <div class="head_section">
-      <h2>OUR CREATIVE PORTFOLIO</h2>
-      <p>VIVAMUS QUIS RISUS UT TURPIS SAGITTIS VENENATIS. ALIQUAM ENIM SEM PRETIUM VITAE, POSUERE AC MATTIS VITAE ARCU</p>
+      <h2>GALERIA</h2>
+      <p>ALGUNOS MOMENTOS DE NUESTRO CLUB</p>
     </div>
   </div>
   <div class="folio">
@@ -528,19 +545,7 @@
     </div>
   </div>
   <div class="clearfix"></div>
-  <div class="container">
-    <div class="head_section">
-      <h2>OUR CLIENTS LIST</h2>
-      <p>OUR CLIENTS WHO LOVE TO HIRE US FOR THEIR PROJECTS</p>
-    </div>
-    <ul class="client_logo">
-      <li><a href="#"><img src="images/logo-01.jpg" alt=""></a></li>
-      <li><a href="#"><img src="images/logo-02.jpg" alt=""></a></li>
-      <li><a href="#"><img src="images/logo-03.jpg" alt=""></a></li>
-      <li><a href="#"><img src="images/logo-04.jpg" alt=""></a></li>
-      <li><a href="#"><img src="images/logo-05.jpg" alt=""></a></li>
-    </ul>
-  </div>
+
 </div>
 <!-- / portfolio Close -->
 
@@ -585,28 +590,18 @@
 <!-- / Parallax Close Close -->
 
 <div class="clearfix"></div>
-<!-- PRICE Section
 
 
-<!-- Parallax 04
-    ================================================== -->
-<div class="parallax parallax_d">
-  <div class="container">
-    <h2>CARNA LOVES THE WEB</h2>
-    <p> WE MAKE BEAUTIFUL APPLICATIONS AND WEBSITES THAT ARE BUILT TO LAST AND
-      THAT IS WHY OUR CLIENTS LOVES US </p>
-    <div class="clearfix"></div>
-    <a href="#" class="plink">BUY THIS DESIGN</a> </div>
-</div>
-<!-- / Parallax Close Close -->
+
+
 <div class="clearfix"></div>
 <!--BLOG Section
     ================================================== -->
-<div class="blog" id="blog">
+<div class="blog" id="noticias">
   <div class="container">
     <div class="head_section">
-      <h2>LATEST FROM BLOG</h2>
-      <p>VIVAMUS QUIS RISUS UT TURPIS SAGITTIS VENENATIS. ALIQUAM ENIM SEM PRETIUM VITAE, POSUERE AC MATTIS VITAE ARCU</p>
+      <h2>ULTIMAS NOTICIAS</h2>
+      <p>ALGUNAS DE NUESTRAS ACTIVIDADES Y REUNIONES</p>
       <div class="blog-carousel-control"> <a class="left fa fa-angle-left" href="#blogCarousel" data-slide="prev"></a> <a class="right fa fa-angle-right" href="#blogCarousel" data-slide="next"></a> </div>
     </div>
     <div class="row">
@@ -739,16 +734,13 @@
     ================================================== -->
 <div class="parallax parallax_e" id="bgvideo">
   <p id="video-controls" class="videocontrol"><a href="#" class="tubular-play">Play</a> | <a href="#" class="tubular-pause">Pause</a></p>
-  <div class="container vicontent"> <a class="video_ic"><i class="fa fa-video-camera"></i></a>
-    <div class="clearfix"></div>
-    <h2>SOME NICE VIDEO PROJECT</h2>
-  </div>
+
 </div>
 <!-- / Parallax Close Close -->
 <div class="clearfix"></div>
 <!-- CONTACT Section
     ================================================== -->
-<div class="contact" id="contact">
+<div class="contact" id="contacto">
   <div class="container">
     <div class="head_section">
       <h2>CONTACTANOS</h2>

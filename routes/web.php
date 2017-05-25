@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome')
+    return view('welcome3')
         ->with('site',\App\Site::first())
         ->with('news',\App\News::all())
         ->with('users',\App\User::all());
