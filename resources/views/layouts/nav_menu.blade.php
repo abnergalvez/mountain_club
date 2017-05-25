@@ -89,6 +89,17 @@
                             <li><a href="#"><del>Donaciones</del></a></li>
                         </ul>
                     </li>
+                    <li class="dropdown @if(isset($section)){{ $section=='website'?'active':''}}@endif">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Sitio Web* <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu " role="menu">
+                            <li><a href="/info_club">Carrusel Imagenes</a></li>
+                            <li><a href="/contacts">Actividades</a></li>
+                            <li><a href="/news">Galeria Imagenes</a></li>
+                            <li><a href="#">Imagenes Parallax</a></li>
+                        </ul>
+                    </li>
                     @endif
 
                     <li class="dropdown @if(isset($section)){{ $section=='usuario'?'active':''}}@endif" >

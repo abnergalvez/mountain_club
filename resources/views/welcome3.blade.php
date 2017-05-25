@@ -18,11 +18,14 @@
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
+
 <!-- FontAweasome Icon -->
 <link  href="css/font-awesome.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" >
+
+
 
 </head>
 <!-- NAVBAR
@@ -183,7 +186,7 @@
           <ul class="process">
             <li>
               <div class="process-title">
-                <div class="process-badge"><i class="fa fa-birthday-cake" aria-hidden="true"></i></div>
+                <div class="process-badge"><i class="fa fa-users" aria-hidden="true"></i></div>
                 Quienes Somos</div>
                 @if(isset($site->who_are))
                 {!! html_entity_decode($site->who_are) !!}
@@ -361,38 +364,38 @@
     </ul>
     <div class="portfolioContainer">
       <div class="item people web">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"><a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a></div>
-        </div>
+        <a href="/img/slider/slide1.png" data-fancybox="gallery"><div class="pimg-wrap"> <img src="/img/slider/slide1.png" alt="image" style="max-height:450px;">
+          <div class="pmask" style=""> <i class="fa fa-eye" aria-hidden="true"></i> VER IMAGEN</div>
+        </div></a>
       </div>
       <div class="item branding recent">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"> <a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a></div>
+        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
+          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
         </div>
       </div>
       <div class="item people web">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"><a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a></div>
+        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
+          <div class="pmask"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
         </div>
       </div>
       <div class="item branding photography">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"><a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a></div>
+        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
+          <div class="pmask"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
         </div>
       </div>
       <div class="item recent web photography">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"> <a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a> </div>
+        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
+          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a> </div>
         </div>
       </div>
       <div class="item branding logo">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"> <a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a></div>
+        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
+          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
         </div>
       </div>
       <div class="item photography">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image">
-          <div class="pmask"> <a href="#"> <i class="fa fa-leaf"></i> <span>LOGO DESIGN</span> </a></div>
+        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
+          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
         </div>
       </div>
     </div>
@@ -639,7 +642,12 @@
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="js/gmap3.js"></script>
 <script src="https://use.fontawesome.com/eece1d93dc.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+
 <script type="text/javascript">
+
+
       $(function(){
         $('#test1').gmap3({
             map:{

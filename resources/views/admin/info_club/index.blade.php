@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-md-3">
                               <div class="form-group">
-                                  <label>Direccion (Reuniones)</label>
+                                  <label>Lugar de Reuniones (Direccion)</label>
                                   <input type="text" class="form-control" name="address" value="{{ $club != null ? $club->address : ''}}" required>
                               </div>
                             </div>
