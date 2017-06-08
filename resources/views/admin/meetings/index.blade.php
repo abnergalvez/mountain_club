@@ -50,8 +50,12 @@
                           </div>
                           <button type="submit" class="btn pull-right btn-success">Crear Reunion</button>
                         </div>
-                    </form>
 
+
+
+                    </form>
+                    <br>
+                    <br>
 
 
                     <div class="col-md-12" style="margin-top:10px;">

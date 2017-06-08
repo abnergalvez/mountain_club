@@ -40,9 +40,17 @@
                             <div class="col-md-4">
 
                                 <div class="form-group">
-                                  <label>Fecha de Nacimiento</label><br>
-                                  <input  type="text"  placeholder="" value="{{$user->birthdate}}" name="birthdate" class="form-control"/>
+                                  <label>Fecha de Nacimiento</label>
+                                    <div class="input-group input-append date datetimepicker">
+                                        <input type="text" class="form-control add-on" data-format="yyyy-MM-dd"  value="{{$user->birthdate}}" name="birthdate" >
+                                        <span class="input-group-btn">
+                                          <button class="btn btn-default add-on" type="button"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></button>
+                                        </span>
+                                      </div>
                                 </div>
+
+
+
                                 <div class="form-group">
                                   <label>Telefono</label><br>
                                   <input  type="text"  placeholder="" value="{{$user->phone}}" name="phone" class="form-control"/>
@@ -102,4 +110,12 @@
       </div>
     </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $('.datetimepicker').datetimepicker({
+      language: 'es-Es',
+      pickTime: false
+    });
+  });
+</script>
 @endsection

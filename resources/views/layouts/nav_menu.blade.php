@@ -95,7 +95,6 @@
                         </a>
                         <ul class="dropdown-menu " role="menu">
                             <li><a href="/info_club">Carrusel Imagenes</a></li>
-                            <li><a href="/contacts">Actividades</a></li>
                             <li><a href="/news">Galeria Imagenes</a></li>
                             <li><a href="#">Imagenes Parallax</a></li>
                         </ul>

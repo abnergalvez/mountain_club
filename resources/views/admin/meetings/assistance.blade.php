@@ -14,7 +14,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label>Reuniones sin Asistencias <small> (Fecha | Lugar | Encargado)</small></label>
-                                     
+
                                     <select name="meeting_id"  class="form-control" required>
                                         @forelse($meetingsUnAssigned as $mu)
                                         <option value="{{$mu->id}}">{{  $mu->date }}  | {{  $mu->place }} | {{  $mu->attendant }}</option>
@@ -54,7 +54,8 @@
                              <button type="submit" class="btn pull-right btn-success">Registrar Asistencia!</button>
                         </div>
                         </form>
-
+                        <br>
+                        <br>
 
 
                         <div class="col-md-12" style="margin-top:10px;">

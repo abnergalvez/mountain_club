@@ -61,7 +61,8 @@
                          <button type="submit" class="btn pull-right btn-success">Registrar Prestamo!</button>
                     </div>
                     </form>
-
+                    <br>
+                    <br>
 
                     <div class="col-md-12" style="margin-top:10px;">
                         <table class="datatable table table-striped table-bordered" cellspacing="0" width="100%">

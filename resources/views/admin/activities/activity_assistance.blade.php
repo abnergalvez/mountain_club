@@ -54,7 +54,8 @@
                              <button type="submit" class="btn pull-right btn-success">Registrar Asistencia Actividad!</button>
                         </div>
                         </form>
-
+                        <br>
+                        <br>
 
 
                         <div class="col-md-12" style="margin-top:10px;">

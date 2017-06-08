@@ -51,6 +51,8 @@
                           <button type="submit" class="btn pull-right btn-success">Registrar Equipo!</button>
                         </div>
                     </form>
+                    <br>
+                    <br>
 
 
 

@@ -114,7 +114,7 @@
 <div class="feature">
   <div class="container">
       <div class="head_section">
-        <h2>NUESTRAS ACTIVIDADES</h2>
+        <h2>Que Hacemos?</h2>
         <p></p>
       </div>
     <div class="row">
@@ -122,32 +122,28 @@
         <div class="service_tiem">
           <div class=""><img class="fa" src="/img/icons/snowed-mountains.png" alt="" height=70 ></div>
           <h2>Ascenciones & Travesias</h2>
-          <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
-            cosngue eget arcu.</p>
+          <p>Baja , Media y Alta Montaña, en toda temporada y con diferentes condiciones climaticas (controlando el riesgo), con metas tanto de altitud (msnm), como de conocer nuevas rutas y lugares.</p>
          </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
     <div class=""><img class="fa" src="/img/icons/climbing-sport.png" alt="" height=70 ></div>
-          <h2>Trekking & Senderismo</h2>
-          <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
-            cosngue eget arcu.</p>
+          <h2>Trekking, Senderismo & Campamentos</h2>
+          <p>Realizamos actividades de baja a media dificultad, conociendo parques y reservas naturales y lugares de visita poco frecuente, disfrutando de la naturaleza y el compañerismo. </p>
            </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
            <div class=""><img class="fa" src="/img/icons/plate-fork-and-knife.png" alt="" height=70 ></div>
-          <h2>Confraternizacion</h2>
-          <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
-            cosngue eget arcu.</p>
+          <h2>Confraternizacion & Ayuda a la Comunidad</h2>
+          <p>No solo realizamos actividades en la montaña si no que tambien realizamos actividades de celebraciones, jornadas de cine, entre otras. Tambien de impacto a la comunidad, como limpieza de lugares y ayuda en caso de catastrofes. </p>
           </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="service_tiem">
           <div class=""><img class="fa" src="/img/icons/classroom.png" alt="" height=70 ></div>
           <h2>Capacitacion e Instruccion</h2>
-          <p>Sed in pulvinar sollicitudin augul Suspend mauris tortor, posuere ut, semper eget
-            cosngue eget arcu.</p>
+          <p>Instruimos a cada uno de nuestros socios antes de una salida, asi tambien enseñamos de las distintas diciplinas como: equipo y uso, planificacion, orientacion, clima, alimentacion, manejo de riesgos y liderazgo, primeros auxilios, escalada & uso de cuerdas, nieve y glaciar, campamentos, etc...</p>
           </div>
       </div>
 
@@ -252,6 +248,12 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
 </div>
 <!-- / about us close -->
 
