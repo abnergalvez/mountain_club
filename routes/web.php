@@ -18,7 +18,7 @@ Route::get('/', function () {
         ->with('galleries',\App\Gallery::all())
         ->with('carousels',\App\Carousel::all())
         ->with('site',\App\Site::first())
-        ->with('news',\App\News::all())
+        ->with('news',\App\News::all()->take(6))
         ->with('users',\App\User::all());
 });
 

@@ -324,7 +324,7 @@
         ?>
               <div class="col-sm-3">
                 <div class="member">
-                  <div class="photo"> <img  src="{{ url('/img/profile/'.$user->photo)}}" alt="" class="img-circle"  /> </div>
+                  <div class="photo"> <a href="{{ url('/img/profile/'.$user->photo)}}" data-fancybox="members"><img  src="{{ url('/img/profile/'.$user->photo)}}" alt="" class="img-circle"  /></a> </div>
                   <div class="info">
                     <h4 class="name">{{ $user->name }} {{ $user->last_name }}</h4>
                     <span class="designation">
@@ -437,123 +437,62 @@
     </div>
     <div class="row">
       <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+
+
+
         <div class="carousel-inner">
-          <div class="item active">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="post-item">
-                  <div class="post-headre">
-                    <div class="post-seam">
-                      <div class="date"> <span>10</span> FEB </div>
-                      <div class="auther-pic"><img src="http://placehold.it/140x140" alt=""></div>
+
+
+
+                    <?php
+                    $i_news = 0;
+                    $i = 0;
+                    foreach ( $news as $new){
+                     if($i_news == 0 && $i == 0)
+                        {
+                            echo  '<div class="item active"><div class="row">';
+                        }
+                      if($i_news == 0 && $i >0)
+                      {
+                          echo  '<div class="item"><div class="row">';
+                      }
+                    ?>
+
+                        <div class="col-sm-4">
+                          <div class="post-item">
+                            <div class="post-headre">
+                              <div class="post-seam">
+
+                                <div class="date text-uppercase" style="text-transform: uppercase;" > <span>
+                                    {{ Carbon\Carbon::parse($new->date)->format('d') }}
+                                    </span>
+                                    {{ Carbon\Carbon::parse($new->date)->format('M') }}
+                                     </div>
+                              </div>
+                              <div class="post-image"> <a href="/img/news/{{ $new->photo }}" data-fancybox="news"><i class="fa fa-photo"></i></a> <img src="/img/news/{{ $new->photo }}" alt="" /></div>
+                            </div>
+                            <div class="post-content">
+                              <h4>{{ $new->title}}</h4>
+                              <small>Autor: {{ $new->author}}</small>
+                               <span>{!! html_entity_decode($new->content) !!}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                      <?php
+                          if($i_news == 2 && $i >= 0 || $news->count() == $i+1)
+                          {
+                              echo  '</div></div>';
+                          }
+
+                        if($i_news == 2){ $i_news = 0; }else{ $i_news++; }
+                       $i++;
+                        }
+                        ?>
+
                     </div>
-                    <div class="post-image"> <a href="#"><i class="fa fa-film"></i></a> <img src="http://placehold.it/740x450" alt="" /></div>
-                  </div>
-                  <div class="post-content">
-                    <h4>SUSPENDISSE NUNC SUSPE</h4>
-                    <p>Eed in pulvinar sollicitudin augul Suspend mauris tort
-                      posere semper eget cosngue eget arcu. Nam leo
-                      pharetra in blandit adg tincidunt</p>
                   </div>
 
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="post-item">
-                  <div class="post-headre">
-                    <div class="post-seam">
-                      <div class="date"> <span>10</span> FEB </div>
-                      <div class="auther-pic"><img src="http://placehold.it/75x75" alt=""></div>
-                    </div>
-                    <div class="post-image"> <a href="#"><i class="fa fa-film"></i></a> <img src="http://placehold.it/740x450" alt="" /></div>
-                  </div>
-                  <div class="post-content">
-                    <h4>SUSPENDISSE NUNC SUSPE</h4>
-                    <p>Eed in pulvinar sollicitudin augul Suspend mauris tort
-                      posere semper eget cosngue eget arcu. Nam leo
-                      pharetra in blandit adg tincidunt</p>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="post-item">
-                  <div class="post-headre">
-                    <div class="post-seam">
-                      <div class="date"> <span>10</span> FEB </div>
-                      <div class="auther-pic"><img src="http://placehold.it/75x75" alt=""></div>
-                    </div>
-                    <div class="post-image"> <a href="#"><i class="fa fa-film"></i></a> <img src="http://placehold.it/740x450" alt="" /></div>
-                  </div>
-                  <div class="post-content">
-                    <h4>SUSPENDISSE NUNC SUSPE</h4>
-                    <p>Eed in pulvinar sollicitudin augul Suspend mauris tort
-                      posere semper eget cosngue eget arcu. Nam leo
-                      pharetra in blandit adg tincidunt</p>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="post-item">
-                  <div class="post-headre">
-                    <div class="post-seam">
-                      <div class="date"> <span>10</span> FEB </div>
-                      <div class="auther-pic"><img src="http://placehold.it/140x140" alt=""></div>
-                    </div>
-                    <div class="post-image"> <a href="#"><i class="fa fa-film"></i></a> <img src="http://placehold.it/740x450" alt="" /></div>
-                  </div>
-                  <div class="post-content">
-                    <h4>SUSPENDISSE NUNC SUSPE</h4>
-                    <p>Eed in pulvinar sollicitudin augul Suspend mauris tort
-                      posere semper eget cosngue eget arcu. Nam leo
-                      pharetra in blandit adg tincidunt</p>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="post-item">
-                  <div class="post-headre">
-                    <div class="post-seam">
-                      <div class="date"> <span>10</span> FEB </div>
-                      <div class="auther-pic"><img src="http://placehold.it/75x75" alt=""></div>
-                    </div>
-                    <div class="post-image"> <a href="#"><i class="fa fa-film"></i></a> <img src="http://placehold.it/740x450" alt="" /></div>
-                  </div>
-                  <div class="post-content">
-                    <h4>SUSPENDISSE NUNC SUSPE</h4>
-                    <p>Eed in pulvinar sollicitudin augul Suspend mauris tort
-                      posere semper eget cosngue eget arcu. Nam leo
-                      pharetra in blandit adg tincidunt</p>
-                  </div>
-
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="post-item">
-                  <div class="post-headre">
-                    <div class="post-seam">
-                      <div class="date"> <span>10</span> FEB </div>
-                      <div class="auther-pic"><img src="http://placehold.it/75x75" alt=""></div>
-                    </div>
-                    <div class="post-image"> <a href="#"><i class="fa fa-film"></i></a> <img src="http://placehold.it/740x450" alt="" /></div>
-                  </div>
-                  <div class="post-content">
-                    <h4>SUSPENDISSE NUNC SUSPE</h4>
-                    <p>Eed in pulvinar sollicitudin augul Suspend mauris tort
-                      posere semper eget cosngue eget arcu. Nam leo
-                      pharetra in blandit adg tincidunt</p>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
