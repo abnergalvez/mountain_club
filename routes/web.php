@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome3')
         ->with('site',\App\Site::first())
+        ->with('parallaxes',\App\Parallax::all())
+        ->with('galleries',\App\Gallery::all())
+        ->with('carousels',\App\Carousel::all())
+        ->with('site',\App\Site::first())
         ->with('news',\App\News::all())
         ->with('users',\App\User::all());
 });
@@ -39,6 +43,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/users','UserController');
 
     Route::resource('/info_club','SiteController');
+
+    Route::resource('/parallaxes','ParallaxController');
+    Route::resource('/carousels','CarouselController');
+    Route::resource('/galleries','GalleryController');
+
 
     Route::resource('/payments','PaymentController');
     Route::get('/suggestions','SuggestionController@index');

@@ -18,11 +18,12 @@
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-
 <!-- FontAweasome Icon -->
 <link  href="css/font-awesome.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+
+@include('layouts.css_parallax')
 <link href="css/style.css" rel="stylesheet" type="text/css" >
 
 
@@ -68,35 +69,55 @@
 <div id="home">
   <div id="homeSlider" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="item active" style="background-image:url({{url('/img/slider/slide1.png')}});">
-        <div class="container">
-          <div class="carousel-caption">
-              <div class="">
-                  <img src="/img/site/logo24.png" alt="" height=100 style="margin:5px;">
-                </div>
-            <h2 class="sltext">Cub Andino<br> Piramide
-            </h2>
-            </div>
-        </div>
-      </div>
-      <div class="item" style="background-image:url({{url('/img/slider/slide2.png')}});">
-        <div class="container">
-          <div class="carousel-caption">
-            <div class="">
-               </div>
-            <h2 class="sltext">Ascenciones,<br> Trekking <br>y mucha Aventura!</h2>
-             </div>
-        </div>
-      </div>
-      <div class="item" style="background-image:url({{url('/img/slider/slide3.png')}});">
-        <div class="container">
-          <div class="carousel-caption">
-            <div class="">
+    <?php $i=0; ?>
+    @forelse($carousels as $carousel)
+
+        <div class="item {{ $i == 0 ? 'active' : ' '}}" style="background-image:url({{url('/img/carousels/'.$carousel->photo.'')}});">
+          <div class="container">
+            <div class="carousel-caption">
+
+              <h2 class="sltext">{{ $carousel->description }}
+              </h2>
+               <!--<div class="">
+                  <img src="/img/site/logo24.png" alt="" height=50 style="margin:5px;">
+              </div>-->
               </div>
-            <h2 class="sltext">¿Quieres Conocernos?</h2>
-            </div>
+          </div>
         </div>
-      </div>
+    <?php $i++ ?>
+    @empty
+          <div class="item active" style="background-image:url({{url('/img/slider/slide1.png')}});">
+            <div class="container">
+              <div class="carousel-caption">
+                  <div class="">
+                      <img src="/img/site/logo24.png" alt="" height=100 style="margin:5px;">
+                    </div>
+                <h2 class="sltext">Cub Andino<br> Piramide
+                </h2>
+                </div>
+            </div>
+          </div>
+
+          <div class="item" style="background-image:url({{url('/img/slider/slide2.png')}});">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="">
+                   </div>
+                <h2 class="sltext">Ascenciones,<br> Trekking <br>y mucha Aventura!</h2>
+                 </div>
+            </div>
+          </div>
+
+          <div class="item" style="background-image:url({{url('/img/slider/slide3.png')}});">
+            <div class="container">
+              <div class="carousel-caption">
+                <div class="">
+                  </div>
+                <h2 class="sltext">¿Quieres Conocernos?</h2>
+                </div>
+            </div>
+          </div>
+      @endforelse
     </div>
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -212,8 +233,8 @@
                     <div class="process-badge"><i class="fa fa-history" aria-hidden="true"></i></div>
                     Reseña Historica</div>
                     @if(isset($site->history))
-                {!! html_entity_decode($site->history) !!}
-                @endif
+                        {!! html_entity_decode($site->history) !!}
+                    @endif
                 </li>
 
               </ul>
@@ -229,19 +250,26 @@
               <div class="process-title">
                 <div class="process-badge"><i class="fa fa-calendar"></i></div>
                 Horario</div>
-              <p>asdasdasdaa asd asd asd asd asd</p>
+
+              @if(isset($site->schedule_meetings))
+                  {!! html_entity_decode($site->schedule_meetings) !!}
+              @endif
             </li>
             <li>
               <div class="process-title">
                 <div class="process-badge"><i class="fa fa-map-marker"></i></div>
                 Lugar</div>
-              <p>Semper eget Donec eget tellus. Maecenas non dolo acnunc malesuada elementum. Suspendisse elit</p>
+              @if(isset($site->address))
+                  {!! html_entity_decode($site->address) !!}
+              @endif
             </li>
             <li>
               <div class="process-title">
                 <div class="process-badge"><i class="fa fa-dot-circle-o"></i></div>
                 Objetivos</div>
-              <p>Semper eget Donec eget tellus. Maecenas non dolo acnunc malesuada elementum. Suspendisse elit</p>
+              @if(isset($site->objetives))
+                  {!! html_entity_decode($site->objetives) !!}
+              @endif
             </li>
           </ul>
         </div>
@@ -357,49 +385,25 @@
   </div>
   <div class="folio">
     <ul class="option-set clearfix" id="portfolioFilter">
-      <li><a href="#" data-filter="*" class="current">ALL</a></li>
-      <li><a href="#" data-filter=".branding">BRANDING</a></li>
-      <li><a href="#" data-filter=".web">WEB</a></li>
-      <li><a href="#" data-filter=".logo">LOGO DESIGN</a></li>
-      <li><a href="#" data-filter=".photography">PHOTOGRAPHY</a></li>
-      <li><a href="#" data-filter=".recent">MOST RECENT</a></li>
+      <li><a href="#" data-filter="*" class="current">TODO</a></li>
+      <li><a href="#" data-filter=".reuniones">REUNIONES</a></li>
+      <li><a href="#" data-filter=".salidas">SALIDAS</a></li>
+      <li><a href="#" data-filter=".celebraciones">CONFRATERNIZACION</a></li>
+      <li><a href="#" data-filter=".capacitaciones">CAPACITACION</a></li>
+      <li><a href="#" data-filter=".entrenamiento">ENTRENAMIENTO</a></li>
     </ul>
     <div class="portfolioContainer">
-      <div class="item people web">
-        <a href="/img/slider/slide1.png" data-fancybox="gallery"><div class="pimg-wrap"> <img src="/img/slider/slide1.png" alt="image" style="max-height:450px;">
+    @forelse($galleries as $gallery)
+      <div class="item {{ $gallery->category}}">
+        <a href="/img/galleries/{{ $gallery->photo}}" data-fancybox="gallery"><div class="pimg-wrap">
+            <img src="/img/galleries/{{ $gallery->photo}}" title="{{ $gallery->description}}" style="max-height:450px;">
           <div class="pmask" style=""> <i class="fa fa-eye" aria-hidden="true"></i> VER IMAGEN</div>
         </div></a>
       </div>
-      <div class="item branding recent">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
-          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
-        </div>
-      </div>
-      <div class="item people web">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
-          <div class="pmask"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
-        </div>
-      </div>
-      <div class="item branding photography">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
-          <div class="pmask"><a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
-        </div>
-      </div>
-      <div class="item recent web photography">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
-          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a> </div>
-        </div>
-      </div>
-      <div class="item branding logo">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
-          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
-        </div>
-      </div>
-      <div class="item photography">
-        <div class="pimg-wrap"> <img src="http://placehold.it/600x450" alt="image" style="max-height:450px;">
-          <div class="pmask"> <a href="#"> <i class="fa fa-eye" aria-hidden="true"></i> VER</a></div>
-        </div>
-      </div>
+     @empty
+
+     @endforelse
+
     </div>
   </div>
   <div class="clearfix"></div>
@@ -600,7 +604,7 @@
               <textarea name="message" id="textarea" class="form-control textareafild" placeholder="Mensaje"></textarea>
             </div>
             <div class="error"></div>
-            <input type="button" value="Enviar" class="submit-btn" onClick="ValiDate()">
+            <input type="submit" value="Enviar" class="submit-btn">
           </form>
           <div class="mailSuccessDiv"> Gracios por contactarnos!!! </div>
         </div>
@@ -640,8 +644,8 @@
 <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="js/jquery.circliful.js"></script>
 <script type="text/javascript" src="js/jquery.tubular.1.0.js"></script>
-<script type="text/javascript" src="js/docs.min.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDaTuYAaoHrjnDSpI1SVxoDEjqiPSWl7T4"></script>
 <script type="text/javascript" src="js/gmap3.js"></script>
 <script src="https://use.fontawesome.com/eece1d93dc.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
@@ -654,28 +658,19 @@
         $('#test1').gmap3({
             map:{
               options:{
-                center:[23.752555, 90.382226],
+                center:[-36.637680 , -71.997166],
                 zoom: 15
               }
             },
             marker:{
               values: [
-                [23.752555, 90.382226], // #1 after average
-                [23.752555, 90.382226] // no group
-              ],
-              cluster:{
-                radius:60,
-            		// This style will be used for clusters with more than 20 markers
-            		0: {
-            		  content: '<div class="cluster cluster-3">CLUSTER_COUNT</div>',
-            			width: 60,
-            			height: 94
-            		}
-            	}
+                [-36.637680 , -71.997166]
+              ]
             }
           });
       });
 </script>
+<script type="text/javascript" src="js/docs.min.js"></script>
 </body>
 </html>
 

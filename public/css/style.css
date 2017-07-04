@@ -1369,19 +1369,7 @@ form .er {
 	color: #fff;
 	margin-top: 60px;
 }
-.parallax_a {
-	float: left;
-	position: relative;
-	width: 100%;
-	height: 400px;
-	text-align: center;
-	color: #fff;
-	background: url('/img/slider/slide3.png') no-repeat center top fixed;
-	background-size: cover;
-	margin-top: 10px;
-	padding-top: 80px;
-	background-color: #000;
-}
+
 .parallax_a h2 {
 	text-align: center;
 	font-size: 40px;
@@ -1403,19 +1391,7 @@ form .er {
 	color: #fff;
 }
 /*parallax 02 */
-.parallax_b {
-	float: left;
-	position: relative;
-	width: 100%;
-	height: 400px;
-	text-align: center;
-	color: #fff;
-	margin-top: 60px;
-	padding-top: 50px;
-	background: url(http://placehold.it/1600x887) no-repeat center top fixed;
-	background-size: cover;
-	background-color: #000;
-}
+
 .parallax_b p {
 	font-size: 18px;
 	line-height: 24px;
@@ -1432,19 +1408,7 @@ form .er {
 	margin: 5px 0 20px;
 }
 /*parallax 03 */
-.parallax_c {
-	float: left;
-	position: relative;
-	width: 100%;
-	height: 400px;
-	text-align: center;
-	color: #fff;
-	margin-top: 60px;
-	padding-top: 50px;
-	background: url(http://placehold.it/1600x887) no-repeat center top fixed;
-	background-size: cover;
-	background-color: #000;
-}
+
 .parallax_c p {
 	font-size: 18px;
 	line-height: 24px;
@@ -1493,19 +1457,7 @@ form .er {
 	color: #e4674e;
 }
 /* Parallax 04*/
-.parallax_d {
-	float: left;
-	position: relative;
-	width: 100%;
-	height: 400px;
-	text-align: center;
-	color: #fff;
-	margin-top: 60px;
-	padding-top: 70px;
-	background: url(http://placehold.it/1600x887) no-repeat center top fixed;
-	background-size: cover;
-	background-color: #000;
-}
+
 .parallax_d h2 {
 	font-size: 36px;
 }
