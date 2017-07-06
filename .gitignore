@@ -3,6 +3,14 @@
 /public/hot
 /storage/*.key
 /vendor
+/public/img/activities
+/public/img/carousels
+/public/img/equipments
+/public/img/galleries
+/public/img/meetings
+/public/img/news
+/public/img/parallaxes
+/public/img/profile
 /.idea
 Homestead.json
 Homestead.yaml

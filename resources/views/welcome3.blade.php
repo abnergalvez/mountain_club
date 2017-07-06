@@ -76,9 +76,8 @@
           <div class="container">
             <div class="carousel-caption">
 
-              <h2 class="sltext">{{ $carousel->description }}
-              </h2>
-               <!--<div class="">
+             <!-- <h2 class="sltext">{{ $carousel->description }}
+             </h2><div class="">
                   <img src="/img/site/logo24.png" alt="" height=50 style="margin:5px;">
               </div>-->
               </div>
@@ -397,7 +396,10 @@
       <div class="item {{ $gallery->category}}">
         <a href="/img/galleries/{{ $gallery->photo}}" data-fancybox="gallery"><div class="pimg-wrap">
             <img src="/img/galleries/{{ $gallery->photo}}" title="{{ $gallery->description}}" style="max-height:450px;">
-          <div class="pmask" style=""> <i class="fa fa-eye" aria-hidden="true"></i> VER IMAGEN</div>
+          <div class="pmask" style="background: url('/img/site/logox4.png');background-size: cover;background-position: center;color:white;">
+              <br><br><br><br>
+              CLIC PARA VER IMAGEN
+          </div>
         </div></a>
       </div>
      @empty
