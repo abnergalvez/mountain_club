@@ -394,7 +394,7 @@
     <div class="portfolioContainer">
     @forelse($galleries as $gallery)
       <div class="item {{ $gallery->category}}">
-        <a href="/img/galleries/{{ $gallery->photo}}" class="gallery" title="{{ $gallery->description}}"><div class="pimg-wrap">
+        <a href="/img/galleries/{{ $gallery->photo}}" class="gallery" rel="{{ $gallery->category}}" title="{{ $gallery->description}}"><div class="pimg-wrap">
             <img src="/img/galleries/{{ $gallery->photo}}" title="{{ $gallery->description}}" style="max-height:450px;">
           <div class="pmask" style="background: url('/img/site/logox4.png');background-size: cover;background-position: center;color:white;">
               <br><br><br><br>
