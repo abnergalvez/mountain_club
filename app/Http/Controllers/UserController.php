@@ -23,12 +23,24 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $users = \App\User::all();
+        if($users->count() > 0)
+        {
+            $order =   $users->max('order') + 1;
+        }
+        else
+        {
+            $order =  1;
+        }
+
+
         $user = new \App\User;
         $user->name = $request->name;
         $user->last_name = $request->last_name;
         $user->club_position = $request->club_position;
         $user->email = $request->email;
         $user->role = $request->role;
+        $user->order = $order;
         $user->password = bcrypt($request->password);
         $user->save();
         return redirect('/users');
@@ -148,6 +160,34 @@ class UserController extends Controller
       return view('admin.activities.myactivityassistance')
           ->with('activities',\App\Activity::All())
           ->with('user',\Auth::user());
+    }
+
+    public function changeOrder($id, $up_down)
+    {
+        $user = \App\User::find($id);
+        $original_order = $user->order;
+        $users = \App\User::all();
+
+        if($up_down == 'down')
+        {
+            $user_tmp = $users->where('order','=',$user->order + 1)->first();
+        }
+
+        if($up_down == 'up')
+        {
+            $user_tmp = $users->where('order','=',$user->order - 1)->first();
+        }
+
+        if(isset($user_tmp->id))
+        {
+            $user2 = \App\User::find($user_tmp->id);
+            $user->order = $user2->order;
+            $user2->order = $original_order;
+            $user->save();
+            $user2->save();
+
+        }
+        return redirect('/users');
     }
 
 }

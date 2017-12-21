@@ -72,6 +72,7 @@
                                     <th>Email</th>
                                     <th>Cargo en Club</th>
                                     <th>Rol</th>
+                                    <th>Orden</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -91,6 +92,15 @@
 
                                     </td>
                                     <td>{{ $user->role == 'admin' ? 'Administrador' : 'Socio'}}</td>
+                                    <td>
+                                        {{ $user->order }}
+                                        <a class="btn btn-warning btn-xs" href="/users/{{$user->id}}/order/down" title="Bajar Posicion" style="float:right;margin-right:5px;">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </a>
+                                        <a class="btn btn-warning btn-xs" href="/users/{{$user->id}}/order/up"  title="Subir Posicion" style="float:right;margin-right:5px;">
+                                            <span class="glyphicon glyphicon-chevron-up"></span>
+                                        </a>
+                                    </td>
                                     <td>
                                         <a class="btn btn-default btn-xs" href="/users/{{$user->id}}"  title="Ver Ficha" style="float:left;margin-right:5px;">
                                             <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>

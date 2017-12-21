@@ -19,7 +19,7 @@ Route::get('/', function () {
         ->with('carousels',\App\Carousel::all())
         ->with('site',\App\Site::first())
         ->with('news',\App\News::all()->take(6))
-        ->with('users',\App\User::all());
+        ->with('users',\App\User::all()->sortBy('order'));
 });
 
 Auth::routes();
@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::group(['middleware' => 'admin'], function () {
 
     Route::resource('/users','UserController');
+    Route::get('/users/{id}/order/{up_down}','UserController@changeOrder');
 
     Route::resource('/info_club','SiteController');
 
